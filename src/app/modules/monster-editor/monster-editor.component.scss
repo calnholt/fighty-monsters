@@ -1,0 +1,35 @@
+#monster-editor {
+    margin-top: 25px;
+    padding-bottom: 120px;
+    min-height: 900px;
+    .card-container{
+        position: fixed !important;
+        margin: 30px;
+    }
+    .form-element{
+        margin-bottom: 15px;
+        .mat-form-field{
+            border-radius: 3px;
+            width: inherit;
+            &.textarea {
+                width: inherit;
+            }
+        }
+        text-input,number-input{
+            border-radius: 3px;
+            width: inherit;
+            .mat-form-field{
+                border-radius: 3px;
+                width: inherit;
+                &.textarea {
+                    width: inherit;
+                }
+            }
+        }
+    }
+    .expansion-container {
+        .term-img {
+            max-height: 17px;
+        }
+    }
+}

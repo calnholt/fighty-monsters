@@ -1,0 +1,97 @@
+<div id="monster-editor">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <!-- NAME INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput [(ngModel)]="monster.name">
+            </mat-form-field>
+          </div>
+          <!-- DEFENSE INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field class="textarea" appearance="fill">
+              <mat-label>Defense</mat-label>
+              <input matInput
+                min="-5"
+                max="5"
+                type="number"
+                #input
+                [(ngModel)]="monster.defense">
+            </mat-form-field>
+          </div>
+          <!-- SPEED INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field class="textarea" appearance="fill">
+              <mat-label>Speed</mat-label>
+              <input matInput
+                min="-5"
+                max="5"
+                type="number"
+                #input
+                [(ngModel)]="monster.speed">
+            </mat-form-field>
+          </div>
+          <!-- ACTIONS -->
+          <ng-container *ngFor="let action of monster.actions; index as i">
+            <!-- TEXT -->
+            <div class="col-12 form-element">
+              <mat-form-field class="textarea" appearance="fill">
+                <mat-label>Action #{{i + 1}}</mat-label>
+                <textarea matInput 
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="10"
+                  [(ngModel)]="action.text">
+                </textarea>
+              </mat-form-field>
+            </div>
+            <!-- INNATE TEXT -->
+            <div class="col-12 form-element">
+              <mat-form-field class="textarea" appearance="fill">
+                <mat-label>Innate</mat-label>
+                <textarea matInput 
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="10"
+                  [(ngModel)]="action.innateText">
+                </textarea>
+              </mat-form-field>
+              <div class="col-12 form-element">
+                <mat-checkbox 
+                  [(ngModel)]="action.isDirect">Direct?
+                </mat-checkbox>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <!-- EXPANSION PANEL -->
+        <div class="expansion-container">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Icon Codes
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="icon-grid">
+                <div *ngFor="let item of imageCodes">
+                  <img src="{{item.path}}" class="term-img"> - {{item.key}}
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+      <div class="col-6">
+        <monster
+          [monster]="monster">
+        </monster>
+      </div>
+    </div>
+  </div>
+</div>

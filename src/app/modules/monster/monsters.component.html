@@ -1,0 +1,12 @@
+<div id="monsters">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let monster of monsters" class="lg-col-4 sm-col-6 p-3">
+        <monster
+          [monster]="monster"
+          [routerLink]="['/editor', monster.name]">
+        </monster>
+      </div>
+    </div>
+  </div>
+</div>

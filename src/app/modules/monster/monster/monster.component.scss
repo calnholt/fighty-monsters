@@ -1,0 +1,133 @@
+@import 'src/assets/styles/constants.scss';
+
+#monster-card {
+    .card-container {
+        width: $card-width;
+        height: $card-height;
+        position: relative;
+        border-radius: 11px;
+        border: rgb(216, 216, 216) 2px solid;
+        background-color: $card-background-color;
+        background-image: $card-background-image;
+        .text {
+            font-family: $text-font;
+            font-size: 11px;
+            margin: 3px 5px;
+            line-height: 13px;
+            div {
+                display: inline-block;
+            }
+        }
+        .name {
+            font-family: $header-font;
+            font-size: 29px;
+            text-align: center;
+            background: black;
+            color: white;
+            border-radius: 9px 9px 0px 0px;
+            padding-top: 4px;
+            letter-spacing: 1px;
+        }
+        .top-container {
+            display: flex;
+            margin: -6px 10px 0px 10px;
+            .stat-container {
+                display: inline-grid;
+                justify-content: center;
+                align-items: self-end;
+                background: #e2e2e2;
+                padding: 5px;
+                border-radius: 0px 5px 5px 0px;
+                min-width: 57px;
+                .stat {
+                    font-family: $header-font;
+                    font-size: 30px;
+                    display: flex;
+                    div:first-child {
+                        padding-right: 2px;
+                    }
+                    img {
+                        max-height: 30px;
+                    }
+                }
+            }
+            .image-container {
+                width: 100%;
+                border: 2px solid;
+                border-color: #e2e2e2;
+                border-right: unset;
+                border-radius: 5px 0px 0px 5px;
+                background: white;
+                background-color: $image-background-color;
+                background-image: $image-background-image;
+                div {
+                    text-align: center;
+                }
+                img {
+                    max-height: 100px;
+                }
+            }
+        }
+        .actions-container {
+            .action-container {
+                display: flex;
+                margin: 5px;
+                border-radius: 5px;
+                &.direct {
+                    background-color: #f9ff94b8;
+                }
+                &.indirect {
+                    background-color: #c1e3ffb8;
+                }
+                &.innate {
+                    margin: 5px 5px 0px 5px;
+                    border-radius: 5px 5px 0px 5px;
+                }
+                .number {
+                    font-size: 18px;
+                    line-height: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-right: 2px;
+                    border-color: white;
+                    border-style: solid;
+                    border-top: unset;
+                    border-bottom: unset;
+                    border-left: unset;
+                    font-family: $header-font;
+                    min-width: 20px;
+                    padding: 5px 5px 0px 5px;
+                }
+            }
+            .innate-container {
+                display: flex;
+                margin-left: 40px;
+                margin-right: 5px;
+                border-radius: 0px 0px 5px 5px;
+                border: 2px solid white;
+                border-right: unset;
+                border-bottom: unset;
+                border-left: unset;
+                &.direct {
+                    background-color: #f9ff94b8;
+                }
+                &.indirect {
+                    background-color: #c1e3ffb8;
+                }
+                .innate-image-container {
+                    padding-left: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        max-height: 15px;
+                    }
+                    text {
+
+                    }
+                }
+            }
+        }
+    }
+}

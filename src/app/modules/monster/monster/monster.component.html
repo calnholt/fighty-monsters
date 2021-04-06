@@ -1,0 +1,46 @@
+<div id="monster-card">
+  <div class="card-container">
+    <div class="name">
+      {{monster.name}}
+    </div>
+    <div class="top-container">
+      <div class="image-container">
+        <div>
+          <img src="{{getMonsterImage()}}">
+        </div>
+      </div>
+      <div class="stat-container">
+        <div class="stat">
+          <div>
+            {{monster.defense}}
+          </div>
+          <div>
+            <img src="./assets/images/symbols/defense.png">
+          </div>
+        </div>
+        <div class="stat">
+          <div>
+            {{monster.speed}}
+          </div>
+          <div>
+            <img src="./assets/images/symbols/speed.png">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions-container">
+      <ng-container *ngFor="let action of monster.actions; index as i">
+        <div class="action-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect, 'innate' : action.innateText}">
+          <div class="number">{{i+1}}</div>
+          <div class="text" [innerHTML]="getText(action.text)"></div>
+        </div>
+        <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">
+          <div class="innate-image-container">
+            <img src="./assets/images/symbols/innate.png">
+          </div>
+          <div class="text" [innerHTML]="getText(action.innateText)" ></div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
