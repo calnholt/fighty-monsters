@@ -18,7 +18,7 @@ export class AppComponent {
     this.monsterService.getMonsters().forEach(m => this.monsters.push(m.name));
   }
 
-  goToMonster(name: string) {
+  goToMonster() {
     this.router.navigate([`editor/${this.monster.name}`], {});
   }
 }
