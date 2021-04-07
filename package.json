@@ -26,7 +26,9 @@
     "bootstrap": "^4.4.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "html2canvas": "^1.0.0-rc.5",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.8",
@@ -46,6 +48,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "angular-cli-ghpages": "^0.6.2"
   }
 }

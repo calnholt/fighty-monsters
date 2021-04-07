@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MonsterService } from './modules/monster/monster.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor(){}
-  ngOnInit() {}
+  monsters: Array<string> = [];
+  monster: any = {};
+
+  constructor(private monsterService: MonsterService, private router: Router){}
+
+  ngOnInit() {
+    this.monsterService.getMonsters().forEach(m => this.monsters.push(m.name));
+  }
+
+  goToMonster(name: string) {
+    this.router.navigate([`editor/${this.monster.name}`], {});
+  }
 }

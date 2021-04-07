@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Monster } from './monster/monster';
 
 @Component({
-  // tslint:disable-next-line: component-selector
   selector: 'monsters',
   templateUrl: './monsters.component.html',
   styleUrls: ['./monsters.component.scss']

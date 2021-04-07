@@ -1,6 +1,6 @@
 import { Path, MONSTERS_PATH } from './../../data/data';
 import { getAbilityText } from './../../common/cards';
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, OnChanges } from '@angular/core';
 import { Monster, Action } from './monster';
 
 @Component({
@@ -9,7 +9,7 @@ import { Monster, Action } from './monster';
   styleUrls: ['./monster.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class MonsterComponent implements OnInit {
+export class MonsterComponent implements OnInit, OnChanges {
   @Input() monster!: Monster;
   CACHED_IMAGE: Path;
 
@@ -17,6 +17,10 @@ export class MonsterComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.CACHED_IMAGE = null;
   }
 
   getText(text: string): string {

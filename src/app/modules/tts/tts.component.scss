@@ -1,0 +1,15 @@
+@import 'src/assets/styles/constants.scss';
+
+
+#tts {
+    .tts-container {
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        width: 2390px;
+        height: 2331px;
+        background-color: black;
+        div {
+            height: 100%;
+        }
+    }
+}

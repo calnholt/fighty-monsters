@@ -1,3 +1,4 @@
+import { TtsModule } from './modules/tts/tts.module';
 import { MaterialModule } from './material-module';
 import { MonsterEditorModule } from './modules/monster-editor/monster-editor.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule,
     CommonComponentsModule,
     BrowserAnimationsModule,
+    TtsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
