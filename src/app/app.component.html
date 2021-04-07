@@ -1,4 +1,4 @@
-<div *ngIf="!isPrint" id="toolbar"> 
+<div id="toolbar"> 
     <mat-toolbar *ngIf="true" color="primary">
       <div fxShow="true" fxHide.gt-sm="true">
         <button mat-icon-button (click)="sidenav.toggle()">
@@ -35,7 +35,4 @@
           <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
-  </div>
-  <div *ngIf="isPrint">
-    <router-outlet></router-outlet>
-  </div>
+</div>
