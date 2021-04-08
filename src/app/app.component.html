@@ -12,7 +12,8 @@
       <span class="example-spacer"></span>
       <div fxShow="true" fxHide.lt-md="true">
         <a mat-button [routerLink]="['/editor', 'new']">Create</a>
-        <a mat-button [routerLink]="['/tts']">TTS Export</a>
+        <a mat-button [routerLink]="['/tts']" matTooltip="Download card spritesheet for Tabletop Simulator (for best results, use Firefox and increase your browser's zoom for improved resolution)"
+        matTooltipPosition="below">TTS Export</a>
         <dropdown
             class="dropdown"
             [label]="'Search Monsters'"
