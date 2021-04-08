@@ -1,53 +1,57 @@
 {
-    "monsters" : [
-        {
-            "name": "Thundercat",
-            "speed": 2,
-            "defense": 0,
-            "actions": [
-                {
-                    "text": "3[DAMAGE]. +2[DAMAGE] if this monster has 10+[HP].",
-                    "isDirect": true,
-                    "innateText": "+3[SPEED]"
-                },
-                {
-                    "text": "9[DAMAGE]. This monster gets <div>1[-ATTACK]</div> and <div>-1[HP].</div>",
-                    "isDirect": true
-                },
-                {
-                    "text": "Give one of your monsters 2[HEAL].",
-                    "isDirect": false,
-                    "innateText": "This monster gets <div>+3[DEFENSE]</div> this turn."
-                },
-                {
-                    "text": "Target's next direct attack deals <div>+2[DAMAGE]</div> and is [TRUE_DAMAGE]. If that attack deals damage, give that monster 1[HEAL].",
-                    "isDirect": false
-                }
-            ]
-        },
-        {
-            "name": "Pengubo",
-            "speed": 3,
-            "defense": 0,
-            "actions": [
-                {
-                    "text": "5[DAMAGE]. +3[DAMAGE] if the other player selected an indirect attack this turn.",
-                    "isDirect": true
-                },
-                {
-                    "text": "4[DAMAGE], +3[DAMAGE] if the target is slower.",
-                    "isDirect": true
-                },
-                {
-                    "text": "During the next turn, your active monster will have +3[SPEED].",
-                    "isDirect": false,
-                    "innateText": "Guard one of your monsters."
-                },
-                {
-                    "text": "Give one of your monsters 3[+ATTACK].",
-                    "isDirect": false
-                }
-            ]
-        }
+    "monsters": [
+      {
+        "name": "Pengubo",
+        "speed": 3,
+        "defense": 0,
+        "cardBackgroundImage": "A",
+        "monsterBackgroundImage": "D",
+        "actions": [
+          {
+            "text": "5[DAMAGE]. +3[DAMAGE] if the other player selected an [INDIRECT] attack this turn.",
+            "isDirect": true
+          },
+          {
+            "text": "4[DAMAGE], +3[DAMAGE] if the target is slower.",
+            "isDirect": true
+          },
+          {
+            "text": "During the next turn, your active monster will have +3[SPEED].",
+            "isDirect": false,
+            "innateText": "[GUARD] one of your monsters."
+          },
+          {
+            "text": "Give one of your monsters 3[+ATTACK].",
+            "isDirect": false
+          }
+        ]
+      },
+      {
+        "name": "Thundercat",
+        "speed": 2,
+        "defense": 0,
+        "cardBackgroundImage": "A",
+        "monsterBackgroundImage": "A",
+        "actions": [
+          {
+            "text": "3[DAMAGE]. +2[DAMAGE] if this monster has 10+[HP].",
+            "isDirect": true,
+            "innateText": "+3[SPEED]"
+          },
+          {
+            "text": "9[DAMAGE]. This monster gets <div>1[-ATTACK]</div> and <div>-1[HP].</div>",
+            "isDirect": true
+          },
+          {
+            "text": "Give one of your monsters 2[HEAL].",
+            "isDirect": false,
+            "innateText": "This monster gets <div>+3[DEFENSE]</div> this turn."
+          },
+          {
+            "text": "Target's next [DIRECT] attack deals <div>+2[DAMAGE]</div> and is [TRUE_DAMAGE]. If that attack deals damage, give that monster 1[HEAL].",
+            "isDirect": false
+          }
+        ]
+      }
     ]
-}
+  }
