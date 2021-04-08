@@ -37,4 +37,12 @@
         width: inherit;
         background: white;
     }
+    .action {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #c1e3ff52;
+        &.direct {
+            background-color: #f9ff9461;
+        }
+    }
 }

@@ -1,5 +1,6 @@
-import { IMAGE_CODES } from './../data/data';
-import { Monster, Action } from './../monster/monster/monster';
+import { MonstersModule } from './../monster/monsters.module';
+import { IMAGE_CODES, BackgroundImageType, BACKGROUND_IMAGE_TYPES } from './../data/data';
+import { Monster, Action, MonstersJson } from './../monster/monster/monster';
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MonsterService } from '../monster/monster.service';
@@ -13,7 +14,8 @@ import { MonsterService } from '../monster/monster.service';
 export class MonsterEditorComponent implements OnInit {
   monster: Monster;
   originalMonster: Monster;
-  imageCodes = IMAGE_CODES;
+  IMAGE_CODES = IMAGE_CODES;
+  BACKGROUND_IMAGE_TYPES = BACKGROUND_IMAGE_TYPES;
 
   constructor(
     private route: ActivatedRoute,
@@ -54,7 +56,7 @@ export class MonsterEditorComponent implements OnInit {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    const json = JSON.stringify(this.monster, null, 2);
+    const json = JSON.stringify(new MonstersJson(this.monsterSerivce.getMonsters()), null, 2);
     selBox.value = json;
     document.body.appendChild(selBox);
     selBox.focus();
