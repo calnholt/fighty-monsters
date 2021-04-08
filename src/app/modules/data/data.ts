@@ -45,12 +45,13 @@ const IMAGE_KEYS = [
     '[BLEED]', 
     '[+SPEED]', 
     '[-SPEED]', 
-    '[ATTACK]', 
     '[SPEED]', 
     '[DEFENSE]',
     '[DIRECT]',
     '[INDIRECT]',
-    '[HP]'
+    '[HP]',
+    '[INITIATIVE]',
+    '[GUARD]',
 ] as const;
 export type ImageCode = typeof IMAGE_KEYS[number];
 export const IMAGE_CODES = [
@@ -65,10 +66,20 @@ export const IMAGE_CODES = [
     new Image( '[BLEED]', SYMBOLS_PATH + 'bleed'),
     new Image( '[+SPEED]', SYMBOLS_PATH + 'plus-speed'),
     new Image( '[-SPEED]', SYMBOLS_PATH + 'minus-speed'),
-    new Image( '[ATTACK]', SYMBOLS_PATH + 'attack'),
     new Image( '[SPEED]', SYMBOLS_PATH + 'speed'),
-    new Image( '[DEFENSE]',SYMBOLS_PATH + 'defense'),
-    new Image( '[DIRECT]',SYMBOLS_PATH + 'direct'),
-    new Image( '[INDIRECT]',SYMBOLS_PATH + 'indirect'),
-    new Image( '[HP]',SYMBOLS_PATH + 'heart'),
+    new Image( '[DEFENSE]', SYMBOLS_PATH + 'defense'),
+    new Image( '[DIRECT]', SYMBOLS_PATH + 'direct'),
+    new Image( '[INDIRECT]', SYMBOLS_PATH + 'indirect'),
+    new Image( '[HP]', SYMBOLS_PATH + 'heart'),
+    new Image( '[INITIATIVE]',SYMBOLS_PATH + 'initiative'),
+    new Image( '[GUARD]',SYMBOLS_PATH + 'guard'),
 ];
+
+export const BACKGROUND_IMAGE_TYPES = [
+    'A', 
+    'B', 
+    'C', 
+    'D', 
+    'E', 
+];
+export type BackgroundImageType = typeof BACKGROUND_IMAGE_TYPES[number];

@@ -7,8 +7,26 @@
         position: relative;
         border-radius: 11px;
         border: rgb(216, 216, 216) 2px solid;
-        background-color: $card-background-color;
-        background-image: $card-background-image;
+        &.A {
+            background-color: $t1-card-background-color;
+            background-image: $t1-card-background-image;
+        }
+        &.B {
+            background-color: $t2-card-background-color;
+            background-image: $t2-card-background-image;
+        }
+        &.C {
+            background-color: $t3-card-background-color;
+            background-image: $t3-card-background-image;
+        }
+        &.D {
+            background-color: $t4-card-background-color;
+            background-image: $t4-card-background-image;
+        }
+        &.E {
+            background-color: $t5-card-background-color;
+            background-image: $t5-card-background-image;
+        }
         .text {
             font-family: $text-font;
             font-size: 11px;
@@ -59,8 +77,26 @@
                 border-right: unset;
                 border-radius: 5px 0px 0px 5px;
                 background: white;
-                background-color: $image-background-color;
-                background-image: $image-background-image;
+                &.A {
+                    background-color: $t1-monster-background-color;
+                    background-image: $t1-monster-background-image;
+                }
+                &.B {
+                    background-color: $t2-monster-background-color;
+                    background-image: $t2-monster-background-image;
+                }
+                &.C {
+                    background-color: $t3-monster-background-color;
+                    background-image: $t3-monster-background-image;
+                }
+                &.D {
+                    background-color: $t4-monster-background-color;
+                    background-image: $t4-monster-background-image;
+                }
+                &.E {
+                    background-color: $t5-monster-background-color;
+                    background-image: $t5-monster-background-image;
+                }
                 div {
                     text-align: center;
                 }
