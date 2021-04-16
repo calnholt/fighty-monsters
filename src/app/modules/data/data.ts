@@ -76,10 +76,10 @@ export const IMAGE_CODES = [
 ];
 
 export const BACKGROUND_IMAGE_TYPES = [
-    'A', 
-    'B', 
-    'C', 
-    'D', 
-    'E', 
+    'BLUE', 
+    'GREEN', 
+    'ORANGE', 
+    'PURPLE', 
+    'RED', 
 ];
 export type BackgroundImageType = typeof BACKGROUND_IMAGE_TYPES[number];
