@@ -14,7 +14,7 @@
         .text {
             font-family: $text-font;
             font-size: 11px;
-            margin: 3px 5px;
+            margin: 3px 3px;
             line-height: 13px;
             div {
                 display: inline-block;
@@ -91,6 +91,7 @@
                 display: flex;
                 margin: 5px;
                 border-radius: 5px;
+                min-height: 23px;
                 &.direct {
                     background-color: var(--direct-color);
                 }
@@ -117,7 +118,7 @@
                     border-bottom: unset;
                     border-left: unset;
                     font-family: $header-font;
-                    min-width: 20px;
+                    min-width: 21px;
                     padding: 5px 5px 0px 5px;
                 }
                 .damage-section {
@@ -141,7 +142,7 @@
             }
             .innate-container {
                 display: flex;
-                margin-left: 40px;
+                margin-left: 64.3px;
                 margin-right: 5px;
                 border-radius: 0px 0px 5px 5px;
                 border: 2px solid white;
@@ -154,8 +155,11 @@
                 &.indirect {
                     background-color: var(--indirect-color);
                 }
+                .text {
+                    font-size: 9px !important;
+                }
                 .innate-image-container {
-                    padding-left: 4px;
+                    padding-left: 2px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
