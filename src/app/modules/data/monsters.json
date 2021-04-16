@@ -4,15 +4,16 @@
         "name": "Pengubo",
         "speed": 3,
         "defense": 0,
-        "cardBackgroundImage": "A",
-        "monsterBackgroundImage": "D",
+        "monsterBackgroundImage": "BLUE",
         "actions": [
           {
-            "text": "5[DAMAGE]. +3[DAMAGE] if the other player selected an [INDIRECT] attack this turn.",
+            "damage": 5,
+            "text": "+3[DAMAGE] if the other player selected an [INDIRECT] attack this turn.",
             "isDirect": true
           },
           {
-            "text": "4[DAMAGE], +3[DAMAGE] if the target is slower.",
+            "damage": 4,
+            "text": "+3[DAMAGE] if the target is slower.",
             "isDirect": true
           },
           {
@@ -30,16 +31,17 @@
         "name": "Thundercat",
         "speed": 2,
         "defense": 0,
-        "cardBackgroundImage": "A",
-        "monsterBackgroundImage": "A",
+        "monsterBackgroundImage": "BLUE",
         "actions": [
           {
-            "text": "3[DAMAGE]. +2[DAMAGE] if this monster has 10+[HP].",
+            "damage": 3,
+            "text": "+2[DAMAGE] if this monster has 10+[HP].",
             "isDirect": true,
             "innateText": "+3[SPEED]"
           },
           {
-            "text": "9[DAMAGE]. This monster gets <div>1[-ATTACK]</div> and <div>-1[HP].</div>",
+            "damage": 9,
+            "text": "This monster gets <div>1[-ATTACK]</div> and <div>-1[HP].</div>",
             "isDirect": true
           },
           {
