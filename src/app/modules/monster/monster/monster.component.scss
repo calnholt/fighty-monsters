@@ -1,32 +1,16 @@
 @import 'src/assets/styles/constants.scss';
 
 #monster-card {
+    --direct-color: #f77c7382;
+    --indirect-color:  #c1e3ffb8;
     .card-container {
         width: $card-width;
         height: $card-height;
         position: relative;
         border-radius: 11px;
         border: rgb(216, 216, 216) 2px solid;
-        &.A {
-            background-color: $t1-card-background-color;
-            background-image: $t1-card-background-image;
-        }
-        &.B {
-            background-color: $t2-card-background-color;
-            background-image: $t2-card-background-image;
-        }
-        &.C {
-            background-color: $t3-card-background-color;
-            background-image: $t3-card-background-image;
-        }
-        &.D {
-            background-color: $t4-card-background-color;
-            background-image: $t4-card-background-image;
-        }
-        &.E {
-            background-color: $t5-card-background-color;
-            background-image: $t5-card-background-image;
-        }
+        background-image: url("/assets/images/graphics/card-background.png");
+        background-size: contain;
         .text {
             font-family: $text-font;
             font-size: 11px;
@@ -38,14 +22,15 @@
         }
         .name {
             font-family: $header-font;
-            font-size: 29px;
+            font-size: 25px;
+            line-height: 28px;
             text-align: center;
             background: black;
             color: white;
             border-radius: 9px 9px 0px 0px;
             padding-top: 4px;
             letter-spacing: 1px;
-            min-height: 47px;
+            min-height: 36px;
         }
         .top-container {
             display: flex;
@@ -77,25 +62,21 @@
                 border-right: unset;
                 border-radius: 5px 0px 0px 5px;
                 background: white;
-                &.A {
-                    background-color: $t1-monster-background-color;
-                    background-image: $t1-monster-background-image;
+                background-size: cover;
+                &.blue {
+                    background-image: url("/assets/images/graphics/blue.png");
                 }
-                &.B {
-                    background-color: $t2-monster-background-color;
-                    background-image: $t2-monster-background-image;
+                &.red {
+                    background-image: url("/assets/images/graphics/blue.png");
                 }
-                &.C {
-                    background-color: $t3-monster-background-color;
-                    background-image: $t3-monster-background-image;
+                &.orange {
+                    background-image: url("/assets/images/graphics/blue.png");
                 }
-                &.D {
-                    background-color: $t4-monster-background-color;
-                    background-image: $t4-monster-background-image;
+                &.purple {
+                    background-image: url("/assets/images/graphics/blue.png");
                 }
-                &.E {
-                    background-color: $t5-monster-background-color;
-                    background-image: $t5-monster-background-image;
+                &.green {
+                    background-image: url("/assets/images/graphics/blue.png");
                 }
                 div {
                     text-align: center;
@@ -111,17 +92,20 @@
                 margin: 5px;
                 border-radius: 5px;
                 &.direct {
-                    background-color: #f9ff94b8;
+                    background-color: var(--direct-color);
                 }
                 &.indirect {
-                    background-color: #c1e3ffb8;
+                    background-color: var(--indirect-color);
                 }
                 &.innate {
                     margin: 5px 5px 0px 5px;
                     border-radius: 5px 5px 0px 5px;
                 }
                 .number {
-                    font-size: 18px;
+                    background: black;
+                    border-radius: 5px 0px 0px 5px;
+                    color: white;
+                    font-size: 21px;
                     line-height: 10px;
                     display: flex;
                     justify-content: center;
@@ -136,6 +120,24 @@
                     min-width: 20px;
                     padding: 5px 5px 0px 5px;
                 }
+                .damage-section {
+                    font-size: 18px;
+                    font-weight: bold;
+                    line-height: 0;
+                    border-right: 2px;
+                    border-color: white;
+                    border-style: solid;
+                    border-top: unset;
+                    border-bottom: unset;
+                    border-left: unset;
+                    min-width: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .damage-img {
+                        max-height: 15px;
+                    }
+                }
             }
             .innate-container {
                 display: flex;
@@ -147,10 +149,10 @@
                 border-bottom: unset;
                 border-left: unset;
                 &.direct {
-                    background-color: #f9ff94b8;
+                    background-color: var(--direct-color);
                 }
                 &.indirect {
-                    background-color: #c1e3ffb8;
+                    background-color: var(--indirect-color);
                 }
                 .innate-image-container {
                     padding-left: 4px;
