@@ -8,7 +8,6 @@
         height: $card-height;
         position: relative;
         border-radius: 11px;
-        border: rgb(216, 216, 216) 2px solid;
         background-image: url("/assets/images/graphics/card-background.png");
         background-size: contain;
         .text {
@@ -23,7 +22,7 @@
         .name {
             font-family: $header-font;
             font-size: 25px;
-            line-height: 28px;
+            line-height: 22px;
             text-align: center;
             background: black;
             color: white;
@@ -34,7 +33,7 @@
         }
         .top-container {
             display: flex;
-            margin: -6px 10px 0px 10px;
+            margin: -10px 10px 0px 10px;
             .stat-container {
                 display: inline-grid;
                 justify-content: center;
@@ -67,22 +66,22 @@
                     background-image: url("/assets/images/graphics/blue.png");
                 }
                 &.red {
-                    background-image: url("/assets/images/graphics/blue.png");
+                    background-image: url("/assets/images/graphics/red.png");
                 }
                 &.orange {
-                    background-image: url("/assets/images/graphics/blue.png");
+                    background-image: url("/assets/images/graphics/orange.png");
                 }
                 &.purple {
-                    background-image: url("/assets/images/graphics/blue.png");
+                    background-image: url("/assets/images/graphics/purple.png");
                 }
                 &.green {
-                    background-image: url("/assets/images/graphics/blue.png");
+                    background-image: url("/assets/images/graphics/green.png");
                 }
                 div {
                     text-align: center;
                 }
                 img {
-                    max-height: 100px;
+                    max-height: 122px;
                 }
             }
         }
