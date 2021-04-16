@@ -8,7 +8,7 @@
         height: $card-height;
         position: relative;
         border-radius: 11px;
-        background-image: url("/assets/images/graphics/card-background.png");
+        background-image: url("~/assets/images/graphics/card-background.png");
         background-size: contain;
         .text {
             font-family: $text-font;
@@ -63,19 +63,19 @@
                 background: white;
                 background-size: cover;
                 &.blue {
-                    background-image: url("/assets/images/graphics/blue.png");
+                    background-image: url("~/assets/images/graphics/blue.png");
                 }
                 &.red {
-                    background-image: url("/assets/images/graphics/red.png");
+                    background-image: url("~/assets/images/graphics/red.png");
                 }
                 &.orange {
-                    background-image: url("/assets/images/graphics/orange.png");
+                    background-image: url("~/assets/images/graphics/orange.png");
                 }
                 &.purple {
-                    background-image: url("/assets/images/graphics/purple.png");
+                    background-image: url("~/assets/images/graphics/purple.png");
                 }
                 &.green {
-                    background-image: url("/assets/images/graphics/green.png");
+                    background-image: url("~/assets/images/graphics/green.png");
                 }
                 div {
                     text-align: center;
