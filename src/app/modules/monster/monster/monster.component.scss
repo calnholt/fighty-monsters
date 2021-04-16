@@ -34,6 +34,7 @@
         .top-container {
             display: flex;
             margin: -10px 10px 0px 10px;
+            max-height: 126px;
             .stat-container {
                 display: inline-grid;
                 justify-content: center;

@@ -9,7 +9,7 @@ export class Monster extends GUI {
     speed: number = 0;
     defense: number = 0;
     actions: Array<Action> = new Array();
-    monsterBackgroundImage: BackgroundImageType;
+    monsterBackgroundImage: BackgroundImageType = 'BLUE';
 
 }
 export class Action {
