@@ -8,6 +8,8 @@
     }
     .form-element{
         margin-bottom: 15px;
+        padding: unset;
+        margin: unset;
         .mat-form-field{
             border-radius: 3px;
             width: inherit;
@@ -28,6 +30,7 @@
         }
     }
     .expansion-container {
+        margin-top: 15px;
         .term-img {
             max-height: 17px;
         }
@@ -40,9 +43,13 @@
     .action {
         padding: 15px;
         border-radius: 10px;
-        background-color: #c1e3ff52;
+        background-color: #c1e3ff40;
+        margin: 10px 0px;
         &.direct {
-            background-color: #f9ff9461;
+            background-color: #f5b3a230;
         }
+    }
+    .card-container {
+        zoom: 140%;
     }
 }

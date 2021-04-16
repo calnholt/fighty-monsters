@@ -10,12 +10,6 @@
               <input matInput [(ngModel)]="monster.name">
             </mat-form-field>
           </div>
-          <!-- CARD BACKGROUND -->
-          <div class="col-12 form-element">
-            <dropdown style="width:inherit;" [label]="'Card Background'" [model]="monster"
-              [property]="'cardBackgroundImage'" [options]="BACKGROUND_IMAGE_TYPES">
-            </dropdown>
-          </div>
           <!-- MONSTER BACKGROUND -->
           <div class="col-12 form-element">
             <dropdown style="width:inherit;" [label]="'Monster Background'" [model]="monster"
@@ -38,6 +32,13 @@
           </div>
           <!-- ACTIONS -->
           <div *ngFor="let action of monster.actions; index as i" class="col-12 form-element action" [ngClass]="{'direct' : action.isDirect}">
+            <!-- DAMAGE -->
+            <div *ngIf="action.isDirect" class="col-12 form-element">
+              <mat-form-field class="textarea" appearance="fill">
+                <mat-label>Damage</mat-label>
+                <input matInput min="1" max="20" type="number" #input [(ngModel)]="action.damage">
+              </mat-form-field>
+            </div>
             <!-- TEXT -->
             <mat-form-field class="textarea" appearance="fill">
               <mat-label>Action #{{i + 1}}</mat-label>
@@ -56,7 +57,7 @@
             </mat-checkbox>
           </div>
           <!-- EXPANSION PANEL -->
-          <div class="col-12 expansion-container">
+          <div class="col-12 expansion-container form-element">
             <mat-accordion>
               <mat-expansion-panel>
                 <mat-expansion-panel-header>

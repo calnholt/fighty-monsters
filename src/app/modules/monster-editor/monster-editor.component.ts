@@ -16,6 +16,7 @@ export class MonsterEditorComponent implements OnInit {
   originalMonster: Monster;
   IMAGE_CODES = IMAGE_CODES;
   BACKGROUND_IMAGE_TYPES = BACKGROUND_IMAGE_TYPES;
+  isNew: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class MonsterEditorComponent implements OnInit {
     this.route.params.subscribe(params => {
       const name: string = this.route.snapshot.paramMap.get('name');
       if (name === 'new') {
+        this.isNew = true;
         this.createRandomMonster();
       } else {
         this.monster = this.monsterSerivce.getMonster(name);
@@ -56,7 +58,15 @@ export class MonsterEditorComponent implements OnInit {
     selBox.style.left = '0';
     selBox.style.top = '0';
     selBox.style.opacity = '0';
-    const json = JSON.stringify(new MonstersJson(this.monsterSerivce.getMonsters()), null, 2);
+    // get all monsters
+    let monsters = this.monsterSerivce.getMonsters();
+    // remove GUI properties
+    monsters.forEach(monster => delete monster.isSelected);
+    // convert wrapper class to string
+    if (this.isNew) {
+      monsters.push(this.monster);
+    }
+    const json = JSON.stringify(new MonstersJson(monsters), null, 2);
     selBox.value = json;
     document.body.appendChild(selBox);
     selBox.focus();
