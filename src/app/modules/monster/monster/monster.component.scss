@@ -29,6 +29,16 @@
                 text-align: center;
                 color: white;
                 letter-spacing: 1px;
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                text-align: center;
+                z-index: 20;
+                &.long-name {
+                    font-size: 17px;
+                }
             }
             background: black;
             border-radius: 9px 9px 0px 0px;
@@ -37,25 +47,35 @@
         }
         .top-container {
             display: flex;
-            margin: -10px 10px 0px 10px;
+            margin: -12px 10px 0px 10px;
             max-height: 126px;
+            position: relative;
             .stat-container {
                 display: inline-grid;
                 justify-content: center;
                 align-items: self-end;
-                background: #e2e2e2;
+                background: #e2e2e2a3;
                 padding: 5px;
-                border-radius: 0px 5px 5px 0px;
-                min-width: 57px;
+                height: 55px;
+                border: 2px solid #e2e2e2;
+                border-radius: 0px 3px 0px 5px;
+                border-top: unset;
+                border-right: unset;
+                position: absolute;
+                top: 0;
+                right: 0;
                 .stat {
                     font-family: $header-font;
-                    font-size: 30px;
                     display: flex;
+                    font-family: "Skater";
+                    font-size: 25px;
+                    line-height: 23px;
+                    justify-content: space-around;
                     div:first-child {
                         padding-right: 2px;
                     }
                     img {
-                        max-height: 30px;
+                        max-height: 18px;
                     }
                 }
             }
@@ -63,10 +83,12 @@
                 width: 100%;
                 border: 2px solid;
                 border-color: #e2e2e2;
-                border-right: unset;
-                border-radius: 5px 0px 0px 5px;
+                border-radius: 5px 5px 5px 5px;
                 background: white;
                 background-size: cover;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
                 &.blue {
                     background-image: url("~/assets/images/graphics/blue.png");
                 }
@@ -82,11 +104,18 @@
                 &.green {
                     background-image: url("~/assets/images/graphics/green.png");
                 }
-                div {
+                .monster-image {
+                    justify-content: center;
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
                     text-align: center;
+                    padding: 5px;
                 }
                 img {
-                    max-height: 122px;
+                    max-height: 112px;
                 }
             }
         }
