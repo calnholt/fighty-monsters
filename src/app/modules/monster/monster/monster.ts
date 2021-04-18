@@ -14,6 +14,7 @@ export class Monster extends GUI {
 }
 export class Action {
     damage?: number = 1;
+    isTrueDamage?: boolean = false;
     isDirect: boolean;
     text: string = '';
     innateText?: string;

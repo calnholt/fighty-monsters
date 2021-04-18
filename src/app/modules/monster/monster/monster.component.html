@@ -32,7 +32,11 @@
       <ng-container *ngFor="let action of monster.actions; index as i">
         <div class="action-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect, 'innate' : action.innateText}">
           <div class="number">{{i+1}}</div>
-          <div *ngIf="action.isDirect" class="damage-section">{{action.damage}}<img class="damage-img" src="./assets/images/symbols/damage.png"></div>
+          <div *ngIf="action.isDirect && action.damage > 0" class="damage-section">
+            {{action.damage}}
+            <img *ngIf="action.damage > 0 && !action.isTrueDamage" class="damage-img" src="./assets/images/symbols/damage.png">
+            <img *ngIf="action.damage > 0 && action.isTrueDamage" class="damage-img" src="./assets/images/symbols/true-damage.png">
+          </div>
           <div class="text" [innerHTML]="getText(action.text)"></div>
         </div>
         <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">
