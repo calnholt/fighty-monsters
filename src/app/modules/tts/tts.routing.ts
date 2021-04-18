@@ -4,5 +4,8 @@ import { Routes } from '@angular/router';
 export const TtsRoutes: Routes = [
   {
     path: 'tts', component: TtsComponent
+  },
+  {
+    path: 'tts/:name', component: TtsComponent
   }
 ];

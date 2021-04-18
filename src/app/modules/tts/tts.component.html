@@ -1,9 +1,14 @@
 <div id="tts">
-  <div class="tts-container">
+  <div *ngIf="monsters && monsters.length" class="all-container">
     <div *ngFor="let monster of monsters">
       <monster
         [monster]="monster">
       </monster>
     </div>
+  </div>
+  <div *ngIf="monster" class="single-container">
+    <monster
+      [monster]="monster">
+    </monster>
   </div>
 </div>
