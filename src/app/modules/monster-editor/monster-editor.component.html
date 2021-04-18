@@ -80,6 +80,7 @@
             </mat-accordion>
           </div>
           <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button>
+          <button class="save-button col-12" mat-stroked-button [routerLink]="['/tts', monster.name]">Download as PNG</button>
         </div>
       </div>
       <div class="col-6">
