@@ -36,9 +36,13 @@
             <div *ngIf="action.isDirect" class="col-12 form-element">
               <mat-form-field class="textarea" appearance="fill">
                 <mat-label>Damage</mat-label>
-                <input matInput min="1" max="20" type="number" #input [(ngModel)]="action.damage">
+                <input matInput min="0" max="20" type="number" #input [(ngModel)]="action.damage">
               </mat-form-field>
             </div>
+            <!-- DAMAGE / TRUE DAMAGE TOGGLE -->
+            <mat-checkbox *ngIf="action.isDirect && action.damage > 0" [(ngModel)]="action.isTrueDamage">
+              True Damage?
+            </mat-checkbox>
             <!-- TEXT -->
             <mat-form-field class="textarea" appearance="fill">
               <mat-label>Action #{{i + 1}}</mat-label>
@@ -53,7 +57,9 @@
                 cdkAutosizeMaxRows="10" [(ngModel)]="action.innateText">
               </textarea>
             </mat-form-field>
-            <mat-checkbox [(ngModel)]="action.isDirect">Direct?
+            <!-- DIRECT / INDIRECT TOGGLE -->
+            <mat-checkbox [(ngModel)]="action.isDirect">
+              Direct?
             </mat-checkbox>
           </div>
           <!-- EXPANSION PANEL -->
