@@ -2,7 +2,7 @@
 
 #monster-card {
     --direct-color: #b460ff82;
-    --indirect-color:  #c1e3ffb8;
+    --indirect-color:  #65b7fa82;
     .card-container {
         width: $card-width;
         height: $card-height;
@@ -15,6 +15,7 @@
             font-size: 11px;
             margin: 3px 3px;
             line-height: 13px;
+            z-index: 10;
             div {
                 display: inline-block;
             }
@@ -92,6 +93,7 @@
                 margin: 5px;
                 border-radius: 5px;
                 min-height: 23px;
+                position: relative;
                 &.direct {
                     background-color: var(--direct-color);
                 }
@@ -133,6 +135,15 @@
                     align-items: center;
                     .damage-img {
                         max-height: 15px;
+                    }
+                }
+                .action-type {
+                    position: absolute;
+                    right: 2px;
+                    top: -3px;
+                    opacity: 0.8;
+                    img {
+                        max-height: 20px;
                     }
                 }
             }

@@ -38,6 +38,10 @@
             <img *ngIf="action.damage > 0 && action.isTrueDamage" class="damage-img" src="./assets/images/symbols/true-damage.png">
           </div>
           <div class="text" [innerHTML]="getText(action.text)"></div>
+          <div class="action-type">
+            <img *ngIf="action.isDirect" src="./assets/images/symbols/direct-white.png">
+            <img *ngIf="!action.isDirect" src="./assets/images/symbols/indirect-white.png">
+          </div>
         </div>
         <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">
           <div class="innate-image-container">
