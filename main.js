@@ -1,11 +1,10 @@
 //TODO: convert to ts file
-
+const APP_NAME = 'fighty-monsters';
 const {app, BrowserWindow} = require('electron');
 const LookupModule = require('./electron/lookups.js');
-// import * as LookupModule from './electron/lookups.js';
+const MonsterModule = require('./electron/monster-cards.js');
 const ipc = require('electron').ipcMain;
 const Store = require('electron-store');
-const monsterStorage = new Store({name: 'monsters'});
 
 let win;
 var options = {
@@ -23,31 +22,7 @@ var options = {
     footer: 'Footer of the Page'
 }
 
-LookupModule.initializeLookups(ipc);
-
-ipc.on('print', (event, arg) => {
-  console.log('Print Initiated');
-    win.webContents.print(options, (success, failureReason) => {
-        if (!success) {
-          console.log(failureReason);
-        }
-    });
-});
-
-ipc.on('saveMonster', (event, monster) => {
-    console.log(monster);
-    monsterStorage.set(monster.monsterName, monster);
-    var obj = monsterStorage.get(monster.monsterName);
-    console.log(obj);
-    return obj;
-});
-
-ipc.handle('getMonster', async (event, monsterName) => {
-  let monster = monsterStorage.get(monsterName);
-  console.log(monster);
-  monsterStorage.openInEditor();
-  return monster;
-});
+LookupModule.initializeLookups(ipc, APP_NAME);
 
 function createWindow () {
   win = new BrowserWindow({
@@ -67,7 +42,6 @@ function createWindow () {
 
 app.whenReady().then(() => {
   createWindow()
-  setupLookups();
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -97,3 +71,5 @@ app.on('ready', () => {
   });
 });
 
+// custom app modules
+MonsterModule.initializeMonsterStorage(ipc, APP_NAME);

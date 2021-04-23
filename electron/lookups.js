@@ -1,10 +1,13 @@
+var LOOKUP;
 const Store = require('electron-store');
-const lookupStorage = new Store({name: 'lookups'});
+let lookupStorage;
 const LOOKUPS = ['GAME_ICONS', 'GAME_TERMS'];
 
 module.exports.initializeLookups = initializeLookups;
 
-function initializeLookups(ipc) {
+function initializeLookups(ipc, appName) {
+    LOOKUP = `${appName}-lookups`;
+    lookupStorage = new Store({name: LOOKUP});
     ipc.handle('get-lookup', async (event, lookupName) => {
         return lookupStorage.get(lookupName);
     });
