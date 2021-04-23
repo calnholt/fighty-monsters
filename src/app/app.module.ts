@@ -8,8 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MonstersModule } from './modules/monster/monsters.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonComponentsModule } from 'card-builder-framework';
-import { MaterialModule } from './material-module';
+import { CommonComponentsModule, MaterialModule } from 'card-builder-framework';
 import { ElectronService } from 'ngx-electron';
 
 @NgModule({
