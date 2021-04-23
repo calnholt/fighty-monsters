@@ -5,8 +5,7 @@ import { MonsterEditorRoutes } from './monster-editor.routing';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonComponentsModule } from 'card-builder-framework';
-import { MaterialModule } from 'src/app/material-module';
+import { CommonComponentsModule, MaterialModule } from 'card-builder-framework';
 
 @NgModule({
     imports: [

@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { TtsComponent } from './tts.component';
 import { TtsRoutes } from './tts.routing';
 import { RouterModule } from '@angular/router';
+import { CommonComponentsModule } from 'card-builder-framework';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(TtsRoutes),
-    MonstersModule
+    MonstersModule,
+    CommonComponentsModule
   ],
   declarations: [
     TtsComponent

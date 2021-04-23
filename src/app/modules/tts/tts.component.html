@@ -1,14 +1,16 @@
-<div id="tts">
-  <div *ngIf="monsters && monsters.length" class="all-container">
-    <div *ngFor="let monster of monsters">
-      <monster
-        [monster]="monster">
-      </monster>
-    </div>
-  </div>
-  <div *ngIf="monster" class="single-container">
-    <monster
-      [monster]="monster">
-    </monster>
-  </div>
+<div>
+  <tts
+    [template]="template"
+    [cards]="monsters"
+    [fileName]="monsters.length > 1 ? 'monsters' : monsters[0].name"
+    [fileExtension]="monsters.length > 1 ? 'jpg' : 'png'">
+  </tts>
 </div>
+
+<ng-template #tts let-card>
+    <ng-container>
+      <monster
+        [monster]="card">
+      </monster>
+    </ng-container>
+</ng-template>
