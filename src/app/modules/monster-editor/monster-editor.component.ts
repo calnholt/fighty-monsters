@@ -4,6 +4,7 @@ import { Monster, Action, MonstersJson } from './../monster/monster/monster';
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MonsterService } from '../monster/monster.service';
+import { ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework';
 
 @Component({
   selector: 'monster-editor',
@@ -14,13 +15,15 @@ import { MonsterService } from '../monster/monster.service';
 export class MonsterEditorComponent implements OnInit {
   monster: Monster;
   originalMonster: Monster;
-  IMAGE_CODES = IMAGE_CODES;
+  gameIcons: Array<GameIcon>;
+  gameTerms: Array<GameTerm>;
   BACKGROUND_IMAGE_TYPES = BACKGROUND_IMAGE_TYPES;
   isNew: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private monsterSerivce: MonsterService,
+    private electronStoreService: ElectronStoreService
   ) {}
 
   ngOnInit() {
@@ -33,6 +36,8 @@ export class MonsterEditorComponent implements OnInit {
         this.monster = this.monsterSerivce.getMonster(name);
       }
       this.originalMonster = Object.assign({}, this.monster);
+      this.electronStoreService.getLookupList('GAME_ICONS').then((res: Array<GameIcon>) => this.gameIcons = res);
+      this.electronStoreService.getLookupList('GAME_TERMS').then((res: Array<GameTerm>) => this.gameTerms = res);
     });
   }
 
@@ -40,6 +45,7 @@ export class MonsterEditorComponent implements OnInit {
     this.monster = new Monster();
     this.monster.speed = Math.floor(Math.random() * 3);
     this.monster.defense = Math.floor(Math.random() * 3);
+    this.monster.monsterBackgroundImage = BACKGROUND_IMAGE_TYPES[Math.floor(Math.random() * BACKGROUND_IMAGE_TYPES.length)];
     this.monster.name = '';
     let a1 = new Action();
     a1.isDirect = true;

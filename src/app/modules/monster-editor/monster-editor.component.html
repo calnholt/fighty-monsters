@@ -62,22 +62,19 @@
               Direct?
             </mat-checkbox>
           </div>
-          <!-- EXPANSION PANEL -->
-          <div class="col-12 expansion-container form-element">
-            <mat-accordion>
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    Icon Codes
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="icon-grid">
-                  <div *ngFor="let item of IMAGE_CODES">
-                    <img src="{{item.path}}" class="term-img"> - {{item.key}}
-                  </div>
-                </div>
-              </mat-expansion-panel>
-            </mat-accordion>
+          <!-- ACCORDIANS -->
+          <div class="col-12 expansion-container form-element" *ngIf="gameIcons && gameIcons.length">
+            <game-icon-accordian
+              [title]="'Game Icons'"
+              [gameIcons]="gameIcons">
+            </game-icon-accordian>
+          </div>
+          <div class="col-12 expansion-container form-element" *ngIf="gameTerms && gameTerms.length">
+            <game-term-accordian
+              [title]="'Game Terms'"
+              [gameTerms]="gameTerms"
+              [gameIcons]="gameIcons">
+            </game-term-accordian>
           </div>
           <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button>
           <button class="save-button col-12" mat-stroked-button [routerLink]="['/tts', monster.name]">Download as PNG</button>
