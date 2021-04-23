@@ -1,39 +1,9 @@
-<div id="toolbar"> 
-    <mat-toolbar *ngIf="true" color="primary">
-      <div fxShow="true" fxHide.gt-sm="true">
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
-  
-      <a mat-button class="name" routerLink="/">
-        <span>Fighty Monsters</span>
-      </a>
-      <span class="example-spacer"></span>
-      <div fxShow="true" fxHide.lt-md="true">
-        <a mat-button [routerLink]="['/editor', 'new']">Create</a>
-        <a mat-button [routerLink]="['/tts']" matTooltip="Download card spritesheet for Tabletop Simulator (for best results, use Firefox and increase your browser's zoom for improved resolution)"
-        matTooltipPosition="below">TTS Export</a>
-        <dropdown
-            class="dropdown"
-            [label]="'Search Monsters'"
-            [model]="monster"
-            [options]="monsters"
-            [property]="'name'"
-            (selectionChange)="goToMonster()">
-          </dropdown>
-      </div>
-  
-    </mat-toolbar>
-    <mat-sidenav-container fxFlexFill class="sidenav-container">
-      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" class="sidenav" fixedInViewport="true">
-        <div fxLayout="column" class="sidenav-options">
-          <a mat-button [routerLink]="['/editor', 'new']">Create</a>
-          <a mat-button [routerLink]="['/tts']">TTS Export</a>
-        </div>
-      </mat-sidenav>
-      <mat-sidenav-content fxFlexFill>
-          <router-outlet></router-outlet>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+<div id="app">
+  <toolbar
+    [title]="'Fighty Monsters'"
+    [searchOptions]="searchOptions"
+    [tabs]="tabs"
+    [searchRoute]="'editor'"
+    (selectionChange)="goToPage($event)">
+  </toolbar>
 </div>

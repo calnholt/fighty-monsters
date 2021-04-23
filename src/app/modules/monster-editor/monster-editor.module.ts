@@ -3,9 +3,9 @@ import { MonstersModule } from './../monster/monsters.module';
 import { NgModule } from '@angular/core';
 import { MonsterEditorRoutes } from './monster-editor.routing';
 import { CommonModule } from '@angular/common';
-import { CommonComponentsModule } from '../common/common-components.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonComponentsModule } from 'card-builder-framework';
 import { MaterialModule } from 'src/app/material-module';
 
 @NgModule({

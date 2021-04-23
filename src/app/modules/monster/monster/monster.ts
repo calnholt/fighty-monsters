@@ -17,7 +17,6 @@ export class Action {
     isTrueDamage?: boolean = false;
     isDirect: boolean;
     text: string = '';
-    innateText?: string;
 }
 export class MonstersJson {
     monsters: Array<Monster>;

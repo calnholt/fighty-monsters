@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MonsterService } from './modules/monster/monster.service';
 import { Router } from '@angular/router';
+import { CardDataService, DropdownOption, ToolbarTab } from 'card-builder-framework';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,24 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  monsters: Array<string> = [];
-  monster: any = {};
-
-  constructor(private monsterService: MonsterService, private router: Router){}
+  searchOptions: Array<string>;
+  tabs: Array<ToolbarTab>;
+  constructor(
+    private cardDataService: CardDataService, 
+    private monsterService: MonsterService,
+    private router: Router,
+    ) { }
 
   ngOnInit() {
-    this.monsterService.getMonsters().forEach(m => this.monsters.push(m.name));
+    this.searchOptions = this.monsterService.getMonsters().map(m => m.name);
+    this.tabs = [
+      new ToolbarTab('Create', 'editor', 'new'),
+      new ToolbarTab('TTS Export', 'tts'),
+      new ToolbarTab('Utilities', 'utilities'),
+    ];
   }
 
-  goToMonster() {
-    this.router.navigate([`editor/${this.monster.name}`], {});
+  goToPage(option: string) {
+    this.router.navigate([`monsters/${option}`], {});
   }
 }

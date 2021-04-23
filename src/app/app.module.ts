@@ -1,5 +1,4 @@
 import { TtsModule } from './modules/tts/tts.module';
-import { MaterialModule } from './material-module';
 import { MonsterEditorModule } from './modules/monster-editor/monster-editor.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,8 +7,10 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { MonstersModule } from './modules/monster/monsters.module';
 import { CommonModule } from '@angular/common';
-import { CommonComponentsModule } from './modules/common/common-components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonComponentsModule } from 'card-builder-framework';
+import { MaterialModule } from './material-module';
+import { ElectronService } from 'ngx-electron';
 
 @NgModule({
   declarations: [	
@@ -28,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     TtsModule,
   ],
-  providers: [],
+  providers: [ElectronService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

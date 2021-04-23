@@ -1,7 +1,7 @@
 import { Path, MONSTERS_PATH } from './../../data/data';
-import { getAbilityText } from './../../common/cards';
 import { Component, OnInit, ViewEncapsulation, Input, OnChanges } from '@angular/core';
-import { Monster, Action } from './monster';
+import { Monster } from './monster';
+import { CardDataService, ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework';
 
 @Component({
   selector: 'monster',
@@ -12,11 +12,22 @@ import { Monster, Action } from './monster';
 export class MonsterComponent implements OnInit, OnChanges {
   @Input() monster!: Monster;
   CACHED_IMAGE: Path;
+  gameIcons: Array<GameIcon> = [];
+  gameTerms: Array<GameTerm> = [];
 
-  constructor() {
+  constructor(
+    private cardDataService: CardDataService,
+    private electronStoreService: ElectronStoreService
+  ) {
   }
 
   ngOnInit() {
+    this.electronStoreService.getLookupList('GAME_ICONS').then((res: Array<GameIcon>) =>  {
+      this.gameIcons = res;
+    });
+    this.electronStoreService.getLookupList('GAME_TERMS').then((res: Array<GameIcon>) =>  {
+      this.gameTerms = res;
+    });
   }
 
   ngOnChanges() {
@@ -24,7 +35,7 @@ export class MonsterComponent implements OnInit, OnChanges {
   }
 
   getText(text: string): string {
-    return getAbilityText(text, 'term', 'term-img');
+    return this.cardDataService.getAbilityText(text, 'term', 'term-img', this.gameTerms, this.gameIcons);
   }
 
   getMonsterImage(): Path {

@@ -45,12 +45,12 @@
             <img *ngIf="!action.isDirect" src="./assets/images/symbols/indirect-white.png">
           </div>
         </div>
-        <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">
+        <!-- <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">
           <div class="innate-image-container">
             <img src="./assets/images/symbols/innate.png">
           </div>
           <div class="text" [innerHTML]="getText(action.innateText)" ></div>
-        </div>
+        </div> -->
       </ng-container>
     </div>
   </div>
