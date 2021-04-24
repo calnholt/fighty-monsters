@@ -1,3 +1,4 @@
+import { ElectronStorageKey } from 'card-builder-framework';
 import { Path, BackgroundImageType } from './../../data/data';
 
 export class GUI {
@@ -5,7 +6,7 @@ export class GUI {
 }
 
 export class Monster extends GUI {
-    name: string = '';
+    name: ElectronStorageKey | string = '';
     speed: number = 0;
     defense: number = 0;
     actions: Array<Action> = new Array();

@@ -22,10 +22,10 @@ export class MonsterComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.electronStoreService.getLookupList('GAME_ICONS').then((res: Array<GameIcon>) =>  {
+    this.electronStoreService.getStorageList('icons').then((res: Array<GameIcon>) =>  {
       this.gameIcons = res;
     });
-    this.electronStoreService.getLookupList('GAME_TERMS').then((res: Array<GameIcon>) =>  {
+    this.electronStoreService.getStorageList('terms').then((res: Array<GameIcon>) =>  {
       this.gameTerms = res;
     });
   }

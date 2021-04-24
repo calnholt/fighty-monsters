@@ -1,8 +1,7 @@
 //TODO: convert to ts file
 const APP_NAME = 'fighty-monsters';
 const {app, BrowserWindow} = require('electron');
-const LookupModule = require('./electron/lookups.js');
-const MonsterModule = require('./electron/monster-cards.js');
+const StorageHandler = require('./electron/storage-handler');
 const ipc = require('electron').ipcMain;
 const Store = require('electron-store');
 
@@ -21,8 +20,6 @@ var options = {
     header: 'Header of the Page',
     footer: 'Footer of the Page'
 }
-
-LookupModule.initializeLookups(ipc, APP_NAME);
 
 function createWindow () {
   win = new BrowserWindow({
@@ -50,6 +47,16 @@ app.whenReady().then(() => {
   })
 });
 
+
+ipc.on('print', (event, arg) => {
+  console.log('Print Initiated');
+    win.webContents.print(options, (success, failureReason) => {
+        if (!success) {
+          console.log(failureReason);
+        }
+    });
+});
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -71,5 +78,5 @@ app.on('ready', () => {
   });
 });
 
-// custom app modules
-MonsterModule.initializeMonsterStorage(ipc, APP_NAME);
+// initialize all data files and ipc handlers
+StorageHandler.initializeAllStorage(ipc);

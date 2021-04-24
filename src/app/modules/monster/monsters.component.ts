@@ -1,3 +1,4 @@
+import { ElectronStoreService } from 'card-builder-framework';
 import { MonsterService } from './monster.service';
 import { Component, OnInit } from '@angular/core';
 import { Monster } from './monster/monster';
@@ -9,9 +10,11 @@ import { Monster } from './monster/monster';
 })
 export class MonstersComponent implements OnInit {
   monsters: Array<Monster>;
-  constructor(private monsterService: MonsterService) { }
+  constructor(private electronStorageService: ElectronStoreService) { }
   ngOnInit() {
-    this.monsters = this.monsterService.getMonsters();
+    this.electronStorageService.getStorageList('monsters').then((res: Array<Monster>) => {
+      this.monsters = res;
+    });
   }
 
 }
