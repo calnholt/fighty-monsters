@@ -1,5 +1,4 @@
 import { ElectronStorageKey } from 'card-builder-framework';
-import { Path, BackgroundImageType } from './../../data/data';
 
 export class GUI {
     isSelected?: boolean;
@@ -10,7 +9,8 @@ export class Monster extends GUI {
     speed: number = 0;
     defense: number = 0;
     actions: Array<Action> = new Array();
-    monsterBackgroundImage: BackgroundImageType = 'BLUE';
+    gameBackground: string;
+    monsterSrc: string;
 
 }
 export class Action {
@@ -19,9 +19,8 @@ export class Action {
     isDirect: boolean;
     text: string = '';
 }
-export class MonstersJson {
-    monsters: Array<Monster>;
-    constructor(monsters: Array<Monster>) {
-        this.monsters = monsters;
-    }
+
+export class GameBackground {
+    name: string;
+    src: string;
 }

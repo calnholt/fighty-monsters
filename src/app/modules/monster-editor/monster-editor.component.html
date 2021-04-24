@@ -1,5 +1,5 @@
 <div id="monster-editor">
-  <div class="container">
+  <div *ngIf="monster" class="container">
     <div class="row">
       <div class="col-6">
         <div class="row">
@@ -10,10 +10,18 @@
               <input matInput [(ngModel)]="monster.name">
             </mat-form-field>
           </div>
+          <!-- MONSTER IMAGE -->
+          <div class="col-12 form-element upload">
+            <file-upload
+              [model]="monster"
+              [property]="'monsterSrc'"
+              [showFileName]="false">
+            </file-upload>
+          </div>
           <!-- MONSTER BACKGROUND -->
           <div class="col-12 form-element">
             <dropdown style="width:inherit;" [label]="'Monster Background'" [model]="monster"
-              [property]="'monsterBackgroundImage'" [options]="BACKGROUND_IMAGE_TYPES">
+              [property]="'gameBackground'" [options]="backgroundOptions">
             </dropdown>
           </div>
           <!-- DEFENSE INPUT -->
@@ -77,6 +85,7 @@
             </game-term-accordian>
           </div>
           <button class="save-button col-12" mat-stroked-button (click)="save()">Save Monster</button>
+          <button class="save-button col-12" mat-stroked-button (click)="delete()">Delete Monster</button>
           <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button>
           <button class="save-button col-12" mat-stroked-button [routerLink]="['/tts', monster.name]">Download as PNG</button>
         </div>

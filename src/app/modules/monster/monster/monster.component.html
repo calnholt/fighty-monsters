@@ -6,9 +6,9 @@
       </div>
     </div>
     <div class="top-container">
-      <div class="image-container {{monster.monsterBackgroundImage.toLowerCase()}}">
+      <div class="image-container" style="background-image:url({{getBackground()}});">
         <div class="monster-image">
-          <img src="{{getMonsterImage()}}">
+          <img *ngIf="monster.monsterSrc" src="{{monster.monsterSrc}}">
         </div>
         <div class="stat-container">
           <div class="stat">
@@ -16,7 +16,7 @@
               {{monster.defense}}
             </div>
             <div>
-              <img src="./assets/images/symbols/defense.png">
+              <img src="{{getIconSrc('Defense')}}">
             </div>
           </div>
           <div class="stat">
@@ -24,7 +24,7 @@
               {{monster.speed}}
             </div>
             <div>
-              <img src="./assets/images/symbols/speed.png">
+              <img src="{{getIconSrc('Speed')}}">
             </div>
           </div>
         </div>
@@ -36,13 +36,13 @@
           <div class="number">{{i+1}}</div>
           <div *ngIf="action.isDirect && action.damage > 0" class="damage-section">
             {{action.damage}}
-            <img *ngIf="action.damage > 0 && !action.isTrueDamage" class="damage-img" src="./assets/images/symbols/damage.png">
-            <img *ngIf="action.damage > 0 && action.isTrueDamage" class="damage-img" src="./assets/images/symbols/true-damage.png">
+            <img *ngIf="action.damage > 0 && !action.isTrueDamage" class="damage-img" src="{{getIconSrc('Damage')}}">
+            <img *ngIf="action.damage > 0 && action.isTrueDamage" class="damage-img" src="{{getIconSrc('True Damage')}}">
           </div>
           <div class="text" [innerHTML]="getText(action.text)"></div>
           <div class="action-type">
-            <img *ngIf="action.isDirect" src="./assets/images/symbols/direct-white.png">
-            <img *ngIf="!action.isDirect" src="./assets/images/symbols/indirect-white.png">
+            <img *ngIf="action.isDirect" src="{{getIconSrc('Direct')}}">
+            <img *ngIf="!action.isDirect" src="{{getIconSrc('Indirect')}}">
           </div>
         </div>
         <!-- <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">

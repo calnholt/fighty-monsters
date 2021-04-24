@@ -10,6 +10,9 @@
         margin-bottom: 15px;
         padding: unset;
         margin: unset;
+        &.upload {
+            padding-bottom: 20px;
+        }
         .mat-form-field{
             border-radius: 3px;
             width: inherit;

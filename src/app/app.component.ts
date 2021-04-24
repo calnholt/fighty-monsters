@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MonsterService } from './modules/monster/monster.service';
 import { Router } from '@angular/router';
-import { CardDataService, DropdownOption, ToolbarTab } from 'card-builder-framework';
+import { CardDataService, DropdownOption, ToolbarTab, ElectronStoreService } from 'card-builder-framework';
+import { Monster } from './modules/monster/monster/monster';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +10,19 @@ import { CardDataService, DropdownOption, ToolbarTab } from 'card-builder-framew
 })
 export class AppComponent {
 
-  searchOptions: Array<string>;
+  searchOptions: Array<string> = [''];
   tabs: Array<ToolbarTab>;
   constructor(
+    private electronStoreService: ElectronStoreService,
     private cardDataService: CardDataService, 
-    private monsterService: MonsterService,
     private router: Router,
     ) { }
 
   ngOnInit() {
-    this.searchOptions = this.monsterService.getMonsters().map(m => m.name);
+    this.electronStoreService.getStorageList('monsters').then((res: Array<Monster>) => {
+      this.searchOptions = res.map(m => m.name);
+
+    });
     this.tabs = [
       new ToolbarTab('Create', 'editor', 'new'),
       new ToolbarTab('TTS Export', 'tts'),

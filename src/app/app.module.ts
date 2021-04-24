@@ -1,3 +1,4 @@
+import { UtilitiesModule } from './modules/utilities/utilities.module';
 import { TtsModule } from './modules/tts/tts.module';
 import { MonsterEditorModule } from './modules/monster-editor/monster-editor.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,7 @@ import { ElectronService } from 'ngx-electron';
     CommonComponentsModule,
     BrowserAnimationsModule,
     TtsModule,
+    UtilitiesModule
   ],
   providers: [ElectronService],
   bootstrap: [AppComponent]

@@ -1,0 +1,48 @@
+<div id="manage">
+  <div class="container">
+    <div class="title">
+      Manage Backgrounds
+      <mat-icon 
+      matTooltip="Upload new backgrounds for your monsters"
+      matTooltipPosition="right">
+      info
+    </mat-icon>
+    </div>
+    <div *ngFor="let lk of gameBackgrounds; index as i" class="row">
+      <div class="col-3">
+        <file-upload 
+          [model]="lk"
+          [property]="'src'"
+          [showFileName]="false"
+          [hoverText]="'Upload'"
+          [hoverPosition]="'left'">
+        </file-upload>
+      </div>
+      <div class="col-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="lk.name">
+        </mat-form-field>
+      </div>
+      <div class="col-2 src">
+        <span *ngIf="lk.src">
+          <img src="{{lk.src}}">
+        </span>
+      </div>
+      <div class="col-1 delete">
+        <button
+          mat-mini-fab color="primary" 
+          (click)="delete(i)"
+          matTooltip="Delete"
+          matTooltipPosition="right">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="button-container">
+      <button mat-stroked-button (click)="addNewRow()">Add New Background</button>
+      <button mat-stroked-button (click)="load()">Undo Changes</button>
+      <button mat-stroked-button (click)="save()">Save</button>
+    </div>
+  </div>
+</div>

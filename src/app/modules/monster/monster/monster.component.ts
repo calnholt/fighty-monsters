@@ -1,7 +1,6 @@
-import { Path, MONSTERS_PATH } from './../../data/data';
 import { Component, OnInit, ViewEncapsulation, Input, OnChanges } from '@angular/core';
-import { Monster } from './monster';
-import { CardDataService, ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework';
+import { GameBackground, Monster } from './monster';
+import { CardDataService, ElectronStoreService, GameIcon, GameTerm, Path } from 'card-builder-framework';
 
 @Component({
   selector: 'monster',
@@ -11,9 +10,10 @@ import { CardDataService, ElectronStoreService, GameIcon, GameTerm } from 'card-
 })
 export class MonsterComponent implements OnInit, OnChanges {
   @Input() monster!: Monster;
-  CACHED_IMAGE: Path;
   gameIcons: Array<GameIcon> = [];
+  gameIconMap: Map<string, GameIcon>;
   gameTerms: Array<GameTerm> = [];
+  gameBackgrounds: Map<string, GameBackground>;
 
   constructor(
     private cardDataService: CardDataService,
@@ -25,23 +25,34 @@ export class MonsterComponent implements OnInit, OnChanges {
     this.electronStoreService.getStorageList('icons').then((res: Array<GameIcon>) =>  {
       this.gameIcons = res;
     });
-    this.electronStoreService.getStorageList('terms').then((res: Array<GameIcon>) =>  {
+    this.electronStoreService.getStorage('icons').then((res: Map<string, GameIcon>) =>  {
+      this.gameIconMap = res;
+    });
+    this.electronStoreService.getStorageList('terms').then((res: Array<GameTerm>) =>  {
       this.gameTerms = res;
+    });
+    this.electronStoreService.getStorage('backgrounds').then((res: Map<string, GameBackground>) =>  {
+      this.gameBackgrounds = res;
     });
   }
 
   ngOnChanges() {
-    this.CACHED_IMAGE = null;
   }
 
   getText(text: string): string {
     return this.cardDataService.getAbilityText(text, 'term', 'term-img', this.gameTerms, this.gameIcons);
   }
 
-  getMonsterImage(): Path {
-    if (this.monster && this.monster.name && !this.CACHED_IMAGE) {
-      this.CACHED_IMAGE = MONSTERS_PATH + this.monster.name.toLowerCase() + '.png';
+  getIconSrc(name: string): string {
+    if (!this.gameIconMap) {
+      return '';
     }
-    return this.CACHED_IMAGE;
+    return this.gameIconMap[name].src;
+  }
+
+  getBackground() {
+    if (this.monster.gameBackground && this.gameBackgrounds) {
+      return this.gameBackgrounds[this.monster.gameBackground].src;
+    }
   }
 }

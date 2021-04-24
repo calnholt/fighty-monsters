@@ -1,4 +1,4 @@
-import { MonsterService } from './../monster/monster.service';
+import { ElectronStoreService } from 'card-builder-framework';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Monster } from '../monster/monster/monster';
 import { ActivatedRoute } from '@angular/router';
@@ -13,16 +13,20 @@ export class TtsComponent implements OnInit {
   monsters: Array<Monster>;
 
   constructor(
-    private monsterService: MonsterService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    private electronStoreService: ElectronStoreService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const name: string = this.route.snapshot.paramMap.get('name');
       if (name) {
-        this.monsters = [this.monsterService.getMonster(name)];
+        this.electronStoreService.getStorageRecord('monsters', name).then((res: Monster) => {
+          this.monsters = [res];
+        });
       } else {
-        this.monsters = this.monsterService.getMonsters();
+        this.electronStoreService.getStorageList('monsters').then((res: Array<Monster>) => {
+          this.monsters = res;
+        });
       }
     });
   }

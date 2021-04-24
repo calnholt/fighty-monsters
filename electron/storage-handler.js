@@ -1,23 +1,23 @@
 const APP_NAME = 'fighty-monsters';
 const Store = require('electron-store');
 
-let termStorage;
-let iconStorage;
-let monsterStorage;
+let storageMap = {};
 
 module.exports.initializeAllStorage = initializeAllStorage;
 
 function initializeAllStorage(ipc) {
-    initializeStorage(ipc, 'terms', termStorage);
-    initializeStorage(ipc, 'icons', iconStorage);
+    initializeStorage(ipc, 'terms');
+    initializeStorage(ipc, 'icons');
     // custom
-    initializeStorage(ipc, 'monsters', monsterStorage);
+    initializeStorage(ipc, 'monsters');
+    initializeStorage(ipc, 'backgrounds');
 };
 
-function initializeStorage(ipc, name, storage) {
+function initializeStorage(ipc, name) {
     let storageName = `${APP_NAME}-${name}`;
     // create .json if not yet created
-    storage = new Store({name: storageName});
+    storageMap[storageName] = new Store({name: storageName});
+    let storage = storageMap[storageName];
     let hasData = storage.store;
     if (!hasData) {
         storage.store = {};

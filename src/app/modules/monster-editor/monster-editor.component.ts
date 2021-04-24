@@ -1,7 +1,6 @@
-import { BACKGROUND_IMAGE_TYPES } from './../data/data';
-import { Monster, Action } from './../monster/monster/monster';
+import { Monster, Action, GameBackground } from './../monster/monster/monster';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework';
 
 @Component({
@@ -13,13 +12,15 @@ import { ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework
 export class MonsterEditorComponent implements OnInit {
   monster: Monster;
   originalMonster: Monster;
-  gameIcons: Array<GameIcon>;
-  gameTerms: Array<GameTerm>;
-  BACKGROUND_IMAGE_TYPES = BACKGROUND_IMAGE_TYPES;
+  gameIcons: Array<GameIcon> = []
+  gameTerms: Array<GameTerm> = [];
+  gameBackgrounds: Array<GameBackground> = [];
+  backgroundOptions: Array<string> = [];
   isNew: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private electronStoreService: ElectronStoreService
   ) {}
 
@@ -32,11 +33,15 @@ export class MonsterEditorComponent implements OnInit {
       } else {
         this.electronStoreService.getStorageRecord('monsters', name).then((res: Monster) => {
           this.monster = res;
+          this.originalMonster = Object.assign({}, res);
         });
       }
-      this.originalMonster = Object.assign({}, this.monster);
       this.electronStoreService.getStorageList('icons').then((res: Array<GameIcon>) => this.gameIcons = res);
       this.electronStoreService.getStorageList('terms').then((res: Array<GameTerm>) => this.gameTerms = res);
+      this.electronStoreService.getStorageList('backgrounds').then((res: Array<GameBackground>) => {
+        this.gameBackgrounds = res;
+        this.backgroundOptions = res.map(g => g.name);
+      });
     });
   }
 
@@ -44,7 +49,6 @@ export class MonsterEditorComponent implements OnInit {
     this.monster = new Monster();
     this.monster.speed = Math.floor(Math.random() * 3);
     this.monster.defense = Math.floor(Math.random() * 3);
-    this.monster.monsterBackgroundImage = BACKGROUND_IMAGE_TYPES[Math.floor(Math.random() * BACKGROUND_IMAGE_TYPES.length)];
     this.monster.name = '';
     let a1 = new Action();
     a1.isDirect = true;
@@ -57,10 +61,21 @@ export class MonsterEditorComponent implements OnInit {
     this.monster.actions = [a1,a2,a3,a4];
   }
 
+  // need to delete old key/pair first to account for name change
   save() {
-    this.electronStoreService.saveStorageRecord('monsters', this.monster, this.monster.name).then((reult: Monster) => {
-      alert("Saved!");
-    })
+    this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
+      this.electronStoreService.saveStorageRecord('monsters', this.monster, this.monster.name).then((result: Monster) => {
+        this.originalMonster = Object.assign({}, this.monster);
+        alert("Saved!");
+      });
+    });
+  }
+
+  delete() {
+    this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
+      alert("Deleted!");
+      this.router.navigate([''], {});
+    });
   }
 
   copy() {

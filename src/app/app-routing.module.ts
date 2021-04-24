@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { UtilitiesComponent } from 'card-builder-framework';
+import { UtilitiesComponent } from './modules/utilities/utilities.component';
 
 export const AppRoutingModule: Routes = [
   {

@@ -1,5 +1,4 @@
 import { ElectronStoreService } from 'card-builder-framework';
-import { MonsterService } from './monster.service';
 import { Component, OnInit } from '@angular/core';
 import { Monster } from './monster/monster';
 
@@ -13,7 +12,7 @@ export class MonstersComponent implements OnInit {
   constructor(private electronStorageService: ElectronStoreService) { }
   ngOnInit() {
     this.electronStorageService.getStorageList('monsters').then((res: Array<Monster>) => {
-      this.monsters = res;
+      this.monsters = res.sort((a,b) => a.name.localeCompare(b.name));
     });
   }
 

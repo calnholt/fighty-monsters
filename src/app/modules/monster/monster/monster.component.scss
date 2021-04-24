@@ -178,6 +178,7 @@
                     z-index: 20;
                     img {
                         max-height: 20px;
+                        filter: invert(1);
                     }
                 }
             }
