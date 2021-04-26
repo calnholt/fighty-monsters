@@ -85,8 +85,8 @@
             </game-term-accordian>
           </div>
           <button class="save-button col-12" mat-stroked-button (click)="save()">Save Monster</button>
-          <button class="save-button col-12" mat-stroked-button (click)="delete()">Delete Monster</button>
-          <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button>
+          <button *ngIf="originalMonster" class="save-button col-12" mat-stroked-button (click)="delete()">Delete Monster</button>
+          <!-- <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button> -->
           <button class="save-button col-12" mat-stroked-button [routerLink]="['/tts', monster.name]">Download as PNG</button>
         </div>
       </div>

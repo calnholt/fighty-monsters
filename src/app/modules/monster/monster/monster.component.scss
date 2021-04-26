@@ -8,6 +8,9 @@
         height: $card-height;
         position: relative;
         border-radius: 11px;
+
+        // background-image: url("file:///Users/CalvinHolt/Documents/projects/fighty-monsters/dist/fighty-monsters/assets/images/graphics/card-background.png");
+
         background-image: url("~/assets/images/graphics/card-background.png");
         background-size: contain;
         .text {

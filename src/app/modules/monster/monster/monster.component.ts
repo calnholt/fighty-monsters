@@ -14,6 +14,7 @@ export class MonsterComponent implements OnInit, OnChanges {
   gameIconMap: Map<string, GameIcon>;
   gameTerms: Array<GameTerm> = [];
   gameBackgrounds: Map<string, GameBackground>;
+  cardBackground: string;
 
   constructor(
     private cardDataService: CardDataService,

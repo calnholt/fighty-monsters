@@ -1,0 +1,1015 @@
+{
+  "Berry Fairy": 
+  {
+    "name": "Berry Fairy",
+    "speed": 3,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 2,
+        "isTrueDamage": false,
+        "text": "Give one of your monsters 1[HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 4,
+        "isTrueDamage": true,
+        "text": "You may shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "([GUARD] target monster. Your monsters have +1[DEFENSE] this turn.)",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "At the end of the next turn, each of your monsters get 1[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Bushmin": 
+  {
+    "name": "Bushmin",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 4,
+        "text": "(Target has -4[DAMAGE] this turn)",
+        "isDirect": true
+      },
+      {
+        "damage": 4,
+        "text": "Then deal 2[BLEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) That monster gets one 1[+ATTACK] or 1[+SPEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Target has +2[DEFENSE] this turn) Give that monster 2[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Chomp":     
+  {
+    "name": "Chomp",
+    "speed": 1,
+    "defense": 2,
+    "actions": [
+      {
+        "damage": 1,
+        "text": "Then deal 2[-DEFENSE].",
+        "isDirect": true
+      },
+      {
+        "damage": 3,
+        "text": "Chomp gets 1[HEAL]",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing.)",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give target 2[HEAL], if you have [INITIATIVE], give them another 1[HEAL]. Shift [INITIATIVE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Coal Elemental": 
+  {
+    "name": "Coal Elemental",
+    "speed": 1,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 2,
+        "text": "(Coal Elemental has +3[SPEED] this turn.)",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 0,
+        "text": "Deal [TRUE_DAMAGE] equal to the amount of [BLEED], [POISON], [-ATTACK], [-DEFENSE] and [-SPEED] on the target.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "   (Target's [DIRECT] attacks used this turn do nothing.) You may shift [INITIATIVE].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Coal Elemental has +2[DEFENSE] until the end of the turn.) Deal 2[-SPEED].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Dragyuthor":     
+  {
+    "name": "Dragyuthor",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 4,
+        "text": "If target has any [BLEED], [POISON], [-ATTACK], [-DEFENSE], or [-SPEED], Dragyuthor gets 1[HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if you have [INITIATIVE]. Shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Deal 1[-DEFENSE], then 2[BLEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Dragyuthor gets 3 [+ATTACK] or 3 [HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Fire Wraith":     
+  {
+    "name": "Fire Wraith",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 3,
+        "text": "Then deal 1[-SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "You may shift [INITIATIVE].",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 1,
+        "text": "One of your monsters gets <div>\"then deal 6[TRUE_DAMAGE]\"</div> on their next [DIRECT] attack.",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing.)",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Firefly":     
+  {
+    "name": "Firefly",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 2,
+        "text": "Then deal 1[-ATTACK].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "You may shift [INITIATIVE].",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing.)",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 2[BLEED], then Firefly gets 1[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Froggo": 
+  {
+    "name": "Froggo",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 4,
+        "text": "([GUARD] Froggo)",
+        "isDirect": true
+      },
+      {
+        "damage": 7,
+        "text": "(Froggo has +7[SPEED] this turn.) If the other player did not select a [DIRECT] attack this turn, this attack does nothing.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Deal 3[POISON].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give each of your monsters 1[+ATTACK] or 1[+SPEED] (choose individually), or give two of your monsters 1[+DEFENSE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Gadjarvaldarth": 
+  {
+    "name": "Gadjarvaldarth",
+    "speed": 1,
+    "defense": 2,
+    "actions": [
+      {
+        "damage": 4,
+        "text": "(Target has -4[DAMAGE] this turn)",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if you have [INITIATIVE]. Shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "(Gadjarvaldarth has +2[DEFENSE] this turn.) Give target 2[HEAL].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 1[-DEFENSE] and 1[-SPEED], you may shift [INITIATIVE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Red"
+  },
+  "Galau'wa": 
+  {
+    "name": "Galau'wa",
+    "speed": 2,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 2,
+        "isTrueDamage": false,
+        "text": "Then deal 2[-DEFENSE].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "isTrueDamage": false,
+        "text": "+4[DAMAGE] if target selected a move this turn that gives [HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "Galau'wa gets 3[+ATTACK] or 2[+DEFENSE].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "(Galau'wa has +2[DEFENSE] this turn) Target's next [DIRECT] also deals 1[-DEFENSE] and 2[BLEED].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Orange"
+  },
+  "Goggi":
+  {
+    "name": "Goggi",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": null,
+        "text": "(Until the end of the turn, the this copies the target's #2 attack.)",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if you have [INITIATIVE]. Shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) That monster's next [DIRECT] attack also deals 3[BLEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give each of your monsters 1[+ATTACK] or 1[+SPEED] (choose individually), or give two of your monsters 1[+DEFENSE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Golem":
+  {
+    "name": "Golem",
+    "speed": 1,
+    "defense": 2,
+    "actions": [
+      {
+        "damage": 2,
+        "isTrueDamage": false,
+        "text": "Then deal 1[-SPEED] or 1[-DEFENSE].",
+        "isDirect": true
+      },
+      {
+        "damage": 2,
+        "isTrueDamage": false,
+        "text": "+1[DAMAGE] equal to Golem's <div>current [DEFENSE]</div>",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "(Until the end of the next turn, Golem has +1[DEFENSE]) Give one of your monsters 1[+DEFENSE].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "(Golem becomes the target of the enemy's attack used this turn) <div>Golem gets 1[HEAL].</div>",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Ice Demon":
+  {
+    "name": "Ice Demon",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 10,
+        "text": "Ice Demon loses 5[HP].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Then deal 2[-SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": null,
+        "text": "Deal (7 -(target's [SPEED]))[TRUE_DAMAGE].",
+        "isDirect": true
+      },
+      {
+        "damage": null,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing.)",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Red"
+  },
+  "Ice Drake":
+  {
+    "name": "Ice Drake",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 3,
+        "isTrueDamage": true,
+        "text": "([GUARD] Ice Drake)",
+        "isDirect": true
+      },
+      {
+        "damage": 3,
+        "isTrueDamage": true,
+        "text": "+3[TRUE_DAMAGE] if target is slower than <div>Ice Drake</div>.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "Remove one [+ATTACK], [+DEFENSE], [+SPEED], or [HEAL] from Ice Drake to use this attack. Deal <div>1[-SPEED] </div> to each enemy. Deal another 1[-SPEED] to target.",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "During Ice Drake's next turn, it can use one of its [DIRECT] on two targets. Use two \"target\" cards.",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Red"
+  },
+  "Idyllix":
+  {
+    "name": "Idyllix",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 5,
+        "text": "+1[DAMAGE] for each [+ATTACK],[+DEFENSE],[+SPEED], and [HEAL] on the target.",
+        "isDirect": true
+      },
+      {
+        "damage": 2,
+        "text": "Idyllix gets 2[+ATTACK].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "(Idyllix has -2[SPEED] this turn) Give target <div>1[HEAL]</div> for each [+ATTACK] on Idyllix. ",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [INDIRECT] attacks used this turn do nothing) Idyllix gets 1[+ATTACK] or 1[+SPEED].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Green"
+  },
+  "Imp":
+  {
+    "name": "Imp",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 2,
+        "text": "You may switch which of the target's moves is on cooldown.",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if the other player selected an [INDIRECT] attack this turn.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Deal 3[BLEED] if you have [INITIATIVE], also  1[-DEFENSE]. <div>Shift [INITIATIVE].</div>",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 2[-DEFENSE], or if you have [INITIATIVE], you may deal 2[-ATTACK] instead. Shift [INITIATIVE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Ivy Serpent":
+  {
+    "name": "Ivy Serpent",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 4,
+        "text": "If you have [INITIATIVE], Ivy Serpent gets 1[HEAL]. Shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+1[DAMAGE] for each [+ATTACK],[+DEFENSE],[+SPEED], and [HEAL] on the target.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Deal 1[-DEFENSE], Ivy Serpent gets1[+SPEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Ivy Serpent has +3[DEFENSE] this turn) Deal 4[BLEED].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Jibberflibble":
+  {
+    "name": "Jibberflibble",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": null,
+        "text": "Deal 1[DAMAGE] and 2[POISON] or deal 3[DAMAGE] and 1[-SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 3,
+        "text": "Give one of your monsters 1[HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) That monster has <div>+5[DEFENSE] during its next turn.</div>",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 2[-DEFENSE] or  2[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Red"
+  },
+  "Kror":
+  {
+    "name": "Kror",
+    "speed": 2,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 10,
+        "text": "Kror loses 5[HP].",
+        "isDirect": true
+      },
+      {
+        "damage": 6,
+        "text": "(Ignores [GUARD])",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Target gets 1[+ATTACK] or 1[+SPEED], then Kror gets 2[+ATTACK] or 2[+SPEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Target's [INDIRECT] attacks do nothing until the end of the next turn.",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Green"
+  },
+  "Moss Elemental":
+  {
+    "name": "Moss Elemental",
+    "speed": 1,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 1,
+        "text": "Give one of your monsters 2[HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "Then deal 1[-SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) Give that monster 1[HEAL] then you may shift [INITIATIVE].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give target 1[HEAL], and 1[+DEFENSE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Mossling":
+  {
+    "name": "Mossling",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 3,
+        "text": "Give one monster 1[+ATTACK] or 1[+SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "(Ignores [GUARD])",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) Give that monster 1[HEAL].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give target 2[HEAL], you may shift [INITIATIVE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Ocuroot":
+  {
+    "name": "Ocuroot",
+    "speed": 1,
+    "defense": 2,
+    "actions": [
+      {
+        "damage": 3,
+        "text": "Deal 1[-SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 3,
+        "text": "Ocuroot gets 1[HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "(Target has +2[DEFENSE] this turn) Give target <div>2[HEAL].</div>",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give one of your monsters 3[+ATTACK].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Overseer":
+  {
+    "name": "Overseer",
+    "speed": 1,
+    "defense": 2,
+    "actions": [
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if the other player selected a move that can give [HEAL].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Then deal 1[TRUE_DAMAGE] to each enemy. Bonuses are only dealt to target.",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 1,
+        "text": "(If target is using an [INDIRECT] attack this turn, it does nothing) Overseer gets 1[HEAL].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 3[POISON].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Red"
+  },
+  "Pengubo":
+  {
+    "name": "Pengubo",
+    "speed": 3,
+    "defense": 0,
+    "gameBackground": "Red",
+    "actions": [
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if the other player selected an [INDIRECT] attack this turn",
+        "isDirect": true
+      },
+      {
+        "damage": 4,
+        "text": "+3[DAMAGE] if the target is slower <div>than Pengubo.</div>",
+        "isDirect": true
+      },
+      {
+        "text": "([GUARD] target monster) Give one of your monsters 1[+SPEED].",
+        "isDirect": false,
+        "innateText": ""
+      },
+      {
+        "text": "Give one of your monsters 3[+ATTACK].",
+        "isDirect": false
+      }
+    ]
+  },
+  "Perpetually Angry Stormcloud":
+  {
+    "name": "Perpetually Angry Stormcloud",
+    "speed": 1,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 2,
+        "text": "1[TRUE_DAMAGE] to each enemy. Bonuses are only dealt to target.",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 4,
+        "text": "+3[TRUE_DAMAGE] if this monster has more than 10[HP].",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [DIRECT] attacks do nothing this turn.)",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Perpetually Angry Stormcloud has <div>+3[DEFENSE]</div> this turn) Give target 2[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Red"
+  },
+  "Psychtua":
+  {
+    "name": "Psychtua",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 2,
+        "text": "Psychtua gets 2[+ATTACK].",
+        "isDirect": true
+      },
+      {
+        "damage": 4,
+        "text": "+3[TRUE_DAMAGE] if the other player selected a [DIRECT] attack this turn.",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing.)",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Target has -1[DEFENSE] this turn) Give target <div>1[HEAL]</div> and 1[+SPEED].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Green"
+  },
+  "Radimex":
+  {
+    "name": "Radimex",
+    "speed": 1,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 6,
+        "text": "(Ignores [GUARD])",
+        "isDirect": true
+      },
+      {
+        "damage": 4,
+        "text": "Then deal 1[-SPEED].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing) You may shift [INITIATIVE].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Radimex has +2[DEFENSE] this turn) Give one of your monsters 3[+ATTACK].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Purple"
+  },
+  "Raizera":
+  {
+    "name": "Raizera",
+    "speed": 1,
+    "defense": 2,
+    "actions": [
+      {
+        "damage": 1,
+        "text": "You may switch which of the target's attacks is on cooldown. You may shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+3[DAMAGE] if the other player selected a [DIRECT] attack this turn.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) Give that monster 1[HEAL].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(If Raizera is hit with a [DIRECT] attack this turn, the attacker gets 2[BLEED]) Give target 2[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Orange"
+  },
+  "Shroomling":
+  {
+    "name": "Shroomling",
+    "speed": 1,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 2,
+        "text": "Give one of your monsters 1[+ATTACK], <div>1[+SPEED], or 1[+DEFENSE].</div>",
+        "isDirect": true
+      },
+      {
+        "damage": 3,
+        "text": "Then deal 2[POISON].",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) Give one of your monsters 1[HEAL].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 1[POISON] then give one of your <div>monsters 1[HEAL].</div>",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Stabboslice":
+  {
+    "name": "Stabboslice",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 3,
+        "text": "Then Deal 2[BLEED], if you have [INITIATIVE] deal 1[-DEFENSE] instead of the 2[BLEED]. <div>Shift [INITIATIVE].</div>",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "(Stabboslice has +2[SPEED] this turn.)",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) Give that monster 1[+ATTACK] or 1[+SPEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Deal 2[-DEFENSE], then you may shift [INITIATIVE].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Green"
+  },
+  "Thornspine":
+  {
+    "name": "Thornspine",
+    "speed": 1,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 4,
+        "isTrueDamage": false,
+        "text": "2[BLEED], if you have [INITIATIVE] deal 1[-DEFENSE] instead of the 2[BLEED]. Shift [INITIATIVE].",
+        "isDirect": true
+      },
+      {
+        "damage": 9,
+        "isTrueDamage": false,
+        "text": "(Thornspine has -3[SPEED] until the end of the next turn, & cannot use [DIRECT] during its next turn.)",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "(Target's [DIRECT] attacks used this turn do nothing) (Target has -1[SPEED] until the end of the next turn)",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "isTrueDamage": false,
+        "text": "(Thornspine has +2[DEFENSE] this turn) Thornspine gets 3[+ATTACK] or 3[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Thundercat":
+  {
+    "name": "Thundercat",
+    "speed": 2,
+    "defense": 0,
+    "gameBackground": "Blue",
+    "actions": [
+      {
+        "damage": 3,
+        "text": "(Thundercat has +3[SPEED] this turn)+2[DAMAGE] if this monster has more than 10[HP].",
+        "isDirect": true,
+        "innateText": ""
+      },
+      {
+        "damage": 9,
+        "text": "This monster gets <div>1[-ATTACK]</div> and <div>-1[HP]</div>",
+        "isDirect": true
+      },
+      {
+        "text": "([DIRECT] attacks deal -3[DAMAGE] to this monster this turn.) Give one monster 2[HEAL].",
+        "isDirect": false,
+        "innateText": ""
+      },
+      {
+        "text": "Target's next [DIRECT] attack deals <div>+2[DAMAGE]</div> and is [TRUE_DAMAGE]. If that attack successfully deals damage, give that monster 1[HEAL].",
+        "isDirect": false
+      }
+    ]
+  },
+  "Tricerakhan":
+  {
+    "name": "Tricerakhan",
+    "speed": 2,
+    "defense": 1,
+    "actions": [
+      {
+        "damage": 5,
+        "text": "+2[DAMAGE] if Tricerakhan has any debuff counters.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Deal 1[TRUE_DAMAGE] to each enemy. Bonuses are only dealt to target.",
+        "isDirect": true,
+        "isTrueDamage": true
+      },
+      {
+        "damage": 1,
+        "text": "([GUARD] target monster) Give that monster 1[+ATTACK], if you have [INITIATIVE] give them <div>another</div> 1[+ATTACK]. Shift [INITIATIVE].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "(Target's [INDIRECT] attacks used this turn do nothing) Tricerakhan gets 1[HEAL].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  },
+  "Vesferru":
+  {
+    "name": "Vesferru",
+    "speed": 3,
+    "defense": 0,
+    "actions": [
+      {
+        "damage": 4,
+        "text": "([GUARD] Vesferru)",
+        "isDirect": true
+      },
+      {
+        "damage": 5,
+        "text": "+1[DAMAGE] for each [+ATTACK],[+DEFENSE],[+SPEED], and [HEAL] on the target.",
+        "isDirect": true
+      },
+      {
+        "damage": 1,
+        "text": "Deal 2[-DEFENSE], if target is slower than Vesferru, also deal 1[BLEED].",
+        "isDirect": false
+      },
+      {
+        "damage": 1,
+        "text": "Give one of your monsters 3[+ATTACK].",
+        "isDirect": false
+      }
+    ],
+    "gameBackground": "Blue"
+  }
+}

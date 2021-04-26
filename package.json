@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:electron": "ng build --base-href ./ && electron .",
+    "dist": "electron-builder --mac"
   },
   "private": true,
   "dependencies": {
@@ -31,7 +33,7 @@
     "@types/electron": "^1.6.10",
     "@types/mocha": "^7.0.1",
     "bootstrap": "^4.4.1",
-    "card-builder-framework": "file:../card-builder-framework/dist/card-builder-framework/card-builder-framework-0.0.9.tgz",
+    "card-builder-framework": "file:../card-builder-framework/dist/card-builder-framework/card-builder-framework-0.0.10.tgz",
     "electron-store": "^7.0.3",
     "file-saver": "^2.0.2",
     "file-system": "^2.2.2",
@@ -74,5 +76,11 @@
     "fs": false,
     "os": false,
     "path": false
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   }
 }

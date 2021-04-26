@@ -1,7 +1,15 @@
 const APP_NAME = 'fighty-monsters';
-const Store = require('electron-store');
+const ElectronStore = require('electron-store');
+const iconJson = require('./data/fighty-monsters-icons.json');
+const backgroundJson = require('./data/fighty-monsters-backgrounds.json');
+const monsterJson = require('./data/fighty-monsters-monsters.json');
 
 let storageMap = {};
+let jsonMap = {
+    icons: iconJson,
+    backgrounds: backgroundJson,
+    monsters: monsterJson
+}
 
 module.exports.initializeAllStorage = initializeAllStorage;
 
@@ -16,11 +24,20 @@ function initializeAllStorage(ipc) {
 function initializeStorage(ipc, name) {
     let storageName = `${APP_NAME}-${name}`;
     // create .json if not yet created
-    storageMap[storageName] = new Store({name: storageName});
+    storageMap[storageName] = new ElectronStore({name: storageName});
     let storage = storageMap[storageName];
-    let hasData = storage.store;
+    let hasData = Object.keys(storage.store).length > 0;
     if (!hasData) {
-        storage.store = {};
+        storage.set('aAaAaA', {});
+        storage.delete('aAaAaA');
+        if (jsonMap[name]) {
+            storage.store = jsonMap[name];
+            storage.set('aAaAaA', {});
+            storage.delete('aAaAaA');
+        }
+        else {
+            storage.store = {};
+        }
     }
     // setup ipc handlers
     // GET

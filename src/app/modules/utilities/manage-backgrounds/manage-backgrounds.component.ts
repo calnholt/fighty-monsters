@@ -24,14 +24,19 @@ export class ManageBackgroundsComponent implements UtilityInterface<GameBackgrou
     const backgroundsToSave = this.validate();
     if (backgroundsToSave) {
       this.electronStoreService.saveStorage('backgrounds', backgroundsToSave, 'name').then((result: Array<GameBackground>) => {
-        this.gameBackgrounds = result.sort((a,b) => a.name.localeCompare(b.name));
+        this.gameBackgrounds = result;
         alert('Saved!');
       });
     }
   }
   load(): void {
     this.electronStoreService.getStorageList('backgrounds').then((res: Array<GameBackground>) =>  {
-      this.gameBackgrounds = res;
+      if (!res.length) {
+        this.gameBackgrounds = [new GameBackground()];
+      }
+      else {
+        this.gameBackgrounds = res;
+      }
     });
   }
   validate(): GameBackground[] {

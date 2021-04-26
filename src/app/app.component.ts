@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CardDataService, DropdownOption, ToolbarTab, ElectronStoreService } from 'card-builder-framework';
+import { ToolbarTab, ElectronStoreService } from 'card-builder-framework';
 import { Monster } from './modules/monster/monster/monster';
 
 @Component({
@@ -14,13 +14,12 @@ export class AppComponent {
   tabs: Array<ToolbarTab>;
   constructor(
     private electronStoreService: ElectronStoreService,
-    private cardDataService: CardDataService, 
     private router: Router,
     ) { }
 
   ngOnInit() {
     this.electronStoreService.getStorageList('monsters').then((res: Array<Monster>) => {
-      this.searchOptions = res.map(m => m.name);
+      this.searchOptions = res.map(m => m.name).sort((a,b) => a.localeCompare(b));
 
     });
     this.tabs = [

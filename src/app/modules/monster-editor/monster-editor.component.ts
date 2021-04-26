@@ -63,12 +63,20 @@ export class MonsterEditorComponent implements OnInit {
 
   // need to delete old key/pair first to account for name change
   save() {
-    this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
+    if (this.originalMonster) {
+      this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
+        this.electronStoreService.saveStorageRecord('monsters', this.monster, this.monster.name).then((result: Monster) => {
+          this.originalMonster = Object.assign({}, this.monster);
+          alert("Saved!");
+        });
+      });
+    }
+    else {
       this.electronStoreService.saveStorageRecord('monsters', this.monster, this.monster.name).then((result: Monster) => {
         this.originalMonster = Object.assign({}, this.monster);
         alert("Saved!");
       });
-    });
+    }
   }
 
   delete() {

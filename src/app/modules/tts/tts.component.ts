@@ -25,7 +25,7 @@ export class TtsComponent implements OnInit {
         });
       } else {
         this.electronStoreService.getStorageList('monsters').then((res: Array<Monster>) => {
-          this.monsters = res;
+          this.monsters = res.sort((a,b) => a.name.localeCompare(b.name));
         });
       }
     });

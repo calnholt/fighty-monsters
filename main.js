@@ -1,9 +1,11 @@
 //TODO: convert to ts file
 const APP_NAME = 'fighty-monsters';
 const {app, BrowserWindow} = require('electron');
-const StorageHandler = require('./electron/storage-handler');
+const url = require("url");
+const path = require("path");
 const ipc = require('electron').ipcMain;
-const Store = require('electron-store');
+const StorageHandler = require('./storage-handler');
+const isDev = true;
 
 let win;
 var options = {
@@ -33,8 +35,14 @@ function createWindow () {
       backgroundThrottling: false,
     }
   })
-  win.webContents.openDevTools();
-  win.loadURL(`http://localhost:4200/index.html`);
+  if (isDev) {
+    win.webContents.openDevTools();
+   win.loadURL(`http://localhost:4200/index.html`);
+  }
+  else {
+    //win.webContents.openDevTools();
+    win.loadFile(`${APP_NAME}/index.html`);
+  }
 }
 
 app.whenReady().then(() => {
