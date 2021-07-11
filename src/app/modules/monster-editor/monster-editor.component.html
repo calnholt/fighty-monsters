@@ -14,6 +14,7 @@
           <div class="col-12 form-element upload">
             <file-upload
               [model]="monster"
+              [label]="'Upload an image'"
               [property]="'monsterSrc'"
               [showFileName]="false">
             </file-upload>
@@ -24,11 +25,11 @@
               [property]="'gameBackground'" [options]="backgroundOptions">
             </dropdown>
           </div>
-          <!-- DEFENSE INPUT -->
+          <!-- HP INPUT -->
           <div class="col-12 form-element">
             <mat-form-field class="textarea" appearance="fill">
-              <mat-label>Defense</mat-label>
-              <input matInput min="-5" max="5" type="number" #input [(ngModel)]="monster.defense">
+              <mat-label>HP</mat-label>
+              <input matInput min="0" max="25" type="number" #input [(ngModel)]="monster.hp">
             </mat-form-field>
           </div>
           <!-- SPEED INPUT -->
@@ -36,6 +37,13 @@
             <mat-form-field class="textarea" appearance="fill">
               <mat-label>Speed</mat-label>
               <input matInput min="-5" max="5" type="number" #input [(ngModel)]="monster.speed">
+            </mat-form-field>
+          </div>
+          <!-- DEFENSE INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field class="textarea" appearance="fill">
+              <mat-label>Defense</mat-label>
+              <input matInput min="-5" max="5" type="number" #input [(ngModel)]="monster.defense">
             </mat-form-field>
           </div>
           <!-- ACTIONS -->
@@ -70,6 +78,19 @@
               Direct?
             </mat-checkbox>
           </div>
+          <!-- ARTIST INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field appearance="fill">
+              <mat-label>Artist</mat-label>
+              <input matInput [(ngModel)]="monster.artist">
+            </mat-form-field>
+          </div>
+          <!-- SET ICON -->
+          <div class="col-12 form-element">
+            <dropdown style="width:inherit;" [label]="'Set Icon'" [model]="monster"
+              [property]="'setGameIconName'" [options]="gameIconsDropdown">
+            </dropdown>
+          </div>
           <!-- ACCORDIANS -->
           <div class="col-12 expansion-container form-element" *ngIf="gameIcons && gameIcons.length">
             <game-icon-accordian
@@ -86,7 +107,7 @@
           </div>
           <button class="save-button col-12" mat-stroked-button (click)="save()">Save Monster</button>
           <button *ngIf="originalMonster" class="save-button col-12" mat-stroked-button (click)="delete()">Delete Monster</button>
-          <!-- <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button> -->
+          <button class="save-button col-12" mat-stroked-button (click)="copy()">Copy Monster to Clipboard</button>
           <button class="save-button col-12" mat-stroked-button [routerLink]="['/tts', monster.name]">Download as PNG</button>
         </div>
       </div>

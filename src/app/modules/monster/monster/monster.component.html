@@ -13,18 +13,18 @@
         <div class="stat-container">
           <div class="stat">
             <div>
-              {{monster.defense}}
-            </div>
-            <div>
-              <img src="{{getIconSrc('Defense')}}">
-            </div>
-          </div>
-          <div class="stat">
-            <div>
               {{monster.speed}}
             </div>
             <div>
               <img src="{{getIconSrc('Speed')}}">
+            </div>
+          </div>
+          <div class="stat">
+            <div>
+              {{monster.defense}}
+            </div>
+            <div>
+              <img src="{{getIconSrc('Defense')}}">
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@
           </div>
           <div class="text" [innerHTML]="getText(action.text)"></div>
           <div class="action-type">
-            <img *ngIf="action.isDirect" src="{{getIconSrc('Direct')}}">
-            <img *ngIf="!action.isDirect" src="{{getIconSrc('Indirect')}}">
+            <img *ngIf="action.isDirect" src="{{getIconSrc('DirectW')}}">
+            <img *ngIf="!action.isDirect" src="{{getIconSrc('IndirectW')}}">
           </div>
         </div>
         <!-- <div *ngIf="action.innateText" class="innate-container" [ngClass]="{'direct' : action.isDirect, 'indirect' : !action.isDirect}">
@@ -52,6 +52,20 @@
           <div class="text" [innerHTML]="getText(action.innateText)" ></div>
         </div> -->
       </ng-container>
+    </div>
+    <div class="artist">
+      <span *ngIf="monster.artist">
+        <img src="{{getIconSrc('Artist')}}">
+        {{monster.artist}}
+      </span>
+    </div>
+    <div class="set-info">
+      <span>
+        <span>{{setInfo}}</span>
+        <span *ngIf="monster.setGameIconName">
+          <img src="{{getIconSrc(monster.setGameIconName)}}">
+        </span>
+      </span>
     </div>
   </div>
 </div>

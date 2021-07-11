@@ -49,10 +49,16 @@ function initializeStorage(ipc, name) {
     });
     // SAVE / UPDATE - must be a list!
     ipc.handle(`save-${name}`, async (event, keyProperty, items) => {
+        storage.store = {}; // delete original contents
         items.forEach(item => storage.set(item[keyProperty], item));
         return storage.store;
     });
     ipc.handle(`save-item-${name}`, async (event, key, item) => {
+        storage.set(key, item);
+        return item;
+    });
+    ipc.handle(`update-item-${name}`, async (event, oldKey, key, item) => {
+        storage.delete(oldKey);
         storage.set(key, item);
         return item;
     });

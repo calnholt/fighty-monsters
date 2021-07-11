@@ -33,7 +33,7 @@
     "@types/electron": "^1.6.10",
     "@types/mocha": "^7.0.1",
     "bootstrap": "^4.4.1",
-    "card-builder-framework": "file:../card-builder-framework/dist/card-builder-framework/card-builder-framework-0.0.10.tgz",
+    "card-builder-framework": "0.0.11",
     "electron-store": "^7.0.3",
     "file-saver": "^2.0.2",
     "file-system": "^2.2.2",

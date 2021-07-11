@@ -8,10 +8,7 @@
         height: $card-height;
         position: relative;
         border-radius: 11px;
-
-        // background-image: url("file:///Users/CalvinHolt/Documents/projects/fighty-monsters/dist/fighty-monsters/assets/images/graphics/card-background.png");
-
-        background-image: url("~/assets/images/graphics/card-background.png");
+        background-image: url($card-background);
         background-size: contain;
         .text {
             font-family: $text-font;
@@ -30,7 +27,6 @@
                 font-size: 25px;
                 line-height: 22px;
                 text-align: center;
-                color: white;
                 letter-spacing: 1px;
                 position: absolute;
                 margin-left: auto;
@@ -43,7 +39,6 @@
                     font-size: 17px;
                 }
             }
-            background: black;
             border-radius: 9px 9px 0px 0px;
             padding-top: 4px;
             min-height: 36px;
@@ -60,7 +55,8 @@
                 align-items: self-end;
                 background: #e2e2e2a3;
                 padding: 5px;
-                height: 55px;
+                height: 78px;
+                width: 51px;
                 border: 2px solid #e2e2e2;
                 border-radius: 0px 3px 0px 5px;
                 border-top: unset;
@@ -74,9 +70,10 @@
                     font-family: "Skater";
                     font-size: 25px;
                     line-height: 23px;
-                    justify-content: space-around;
                     div:first-child {
                         padding-right: 2px;
+                        width: 23px;
+                        text-align: center;
                     }
                     img {
                         max-height: 18px;
@@ -93,21 +90,6 @@
                 display: flex;
                 justify-content: space-between;
                 position: relative;
-                &.blue {
-                    background-image: url("~/assets/images/graphics/blue.png");
-                }
-                &.red {
-                    background-image: url("~/assets/images/graphics/red.png");
-                }
-                &.orange {
-                    background-image: url("~/assets/images/graphics/orange.png");
-                }
-                &.purple {
-                    background-image: url("~/assets/images/graphics/purple.png");
-                }
-                &.green {
-                    background-image: url("~/assets/images/graphics/green.png");
-                }
                 .monster-image {
                     justify-content: center;
                     position: relative;
@@ -126,7 +108,7 @@
         .actions-container {
             .action-container {
                 display: flex;
-                margin: 5px;
+                margin: 3px 3px;
                 border-radius: 5px;
                 min-height: 23px;
                 position: relative;
@@ -181,7 +163,6 @@
                     z-index: 20;
                     img {
                         max-height: 20px;
-                        filter: invert(1);
                     }
                 }
             }
@@ -213,6 +194,22 @@
                     }
                 }
             }
+        }
+        .artist,.set-info {
+            position: absolute;
+            bottom: 0;
+            font-size: 8px;
+            font-weight: bold;
+            img {
+                height: 9px;
+                padding-right: 2px;
+            }
+        }
+        .artist {
+            left: 13px;
+        }
+        .set-info {
+            right: 13px;
         }
     }
 }

@@ -17,6 +17,7 @@ export class MonsterEditorComponent implements OnInit {
   gameBackgrounds: Array<GameBackground> = [];
   backgroundOptions: Array<string> = [];
   isNew: boolean = false;
+  gameIconsDropdown = Array<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,10 @@ export class MonsterEditorComponent implements OnInit {
           this.originalMonster = Object.assign({}, res);
         });
       }
-      this.electronStoreService.getStorageList('icons').then((res: Array<GameIcon>) => this.gameIcons = res);
+      this.electronStoreService.getStorageList('icons').then((res: Array<GameIcon>) => {
+        this.gameIcons = res;
+        this.gameIcons.forEach(i => this.gameIconsDropdown.push(i.name));
+      });
       this.electronStoreService.getStorageList('terms').then((res: Array<GameTerm>) => this.gameTerms = res);
       this.electronStoreService.getStorageList('backgrounds').then((res: Array<GameBackground>) => {
         this.gameBackgrounds = res;
@@ -64,11 +68,9 @@ export class MonsterEditorComponent implements OnInit {
   // need to delete old key/pair first to account for name change
   save() {
     if (this.originalMonster) {
-      this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
-        this.electronStoreService.saveStorageRecord('monsters', this.monster, this.monster.name).then((result: Monster) => {
-          this.originalMonster = Object.assign({}, this.monster);
-          alert("Saved!");
-        });
+      this.electronStoreService.updateStorageRecord('monsters', this.monster, this.originalMonster.name, this.monster.name).then((result: Monster) => {
+        this.originalMonster = Object.assign({}, this.monster);
+        alert("Saved!");
       });
     }
     else {
@@ -87,19 +89,21 @@ export class MonsterEditorComponent implements OnInit {
   }
 
   copy() {
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    // get all monsters
-    const json = JSON.stringify(this.monster, null, 2);
-    selBox.value = json;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
+    this.electronStoreService.getStorage('monsters').then(res => {
+      const selBox = document.createElement('textarea');
+      selBox.style.position = 'fixed';
+      selBox.style.left = '0';
+      selBox.style.top = '0';
+      selBox.style.opacity = '0';
+      // get all monsters
+      const json = JSON.stringify(res, null, 2);
+      selBox.value = json;
+      document.body.appendChild(selBox);
+      selBox.focus();
+      selBox.select();
+      document.execCommand('copy');
+      document.body.removeChild(selBox);
+    });
   }
 
 }
