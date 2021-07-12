@@ -1,7 +1,7 @@
 import { Monster, Action, GameBackground } from './../monster/monster/monster';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework';
+import { CardDataService, ElectronStoreService, GameIcon, GameTerm } from 'card-builder-framework';
 
 @Component({
   selector: 'monster-editor',
@@ -18,11 +18,13 @@ export class MonsterEditorComponent implements OnInit {
   backgroundOptions: Array<string> = [];
   isNew: boolean = false;
   gameIconsDropdown = Array<string>();
+  showMonster = true;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private electronStoreService: ElectronStoreService
+    private electronStoreService: ElectronStoreService,
+    private cardDataService: CardDataService
   ) {}
 
   ngOnInit() {
@@ -82,10 +84,14 @@ export class MonsterEditorComponent implements OnInit {
   }
 
   delete() {
-    this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
-      alert("Deleted!");
-      this.router.navigate([''], {});
-    });
+    const answer = window.confirm("Are you sure you want to delete this monster?");
+    if (answer) {
+      console.log("deleted");
+      // this.electronStoreService.deleteStorageRecord('monsters', this.originalMonster.name).then(res => {
+      //   alert("Deleted!");
+      //   this.router.navigate([''], {});
+      // });
+    }
   }
 
   copy() {
@@ -104,6 +110,14 @@ export class MonsterEditorComponent implements OnInit {
       document.execCommand('copy');
       document.body.removeChild(selBox);
     });
+  }
+
+  reloadMonster(src: string) {
+    this.monster.monsterSrc = src;
+  }
+
+  getText(text: string): string {
+    return this.cardDataService.getAbilityText(text, 'term', 'term-img', this.gameTerms, this.gameIcons);
   }
 
 }

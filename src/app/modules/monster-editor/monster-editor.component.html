@@ -16,7 +16,8 @@
               [model]="monster"
               [label]="'Upload an image'"
               [property]="'monsterSrc'"
-              [showFileName]="false">
+              [showFileName]="false"
+              (selectionChange)="reloadMonster($event)">
             </file-upload>
           </div>
           <!-- MONSTER BACKGROUND -->
@@ -24,13 +25,6 @@
             <dropdown style="width:inherit;" [label]="'Monster Background'" [model]="monster"
               [property]="'gameBackground'" [options]="backgroundOptions">
             </dropdown>
-          </div>
-          <!-- HP INPUT -->
-          <div class="col-12 form-element">
-            <mat-form-field class="textarea" appearance="fill">
-              <mat-label>HP</mat-label>
-              <input matInput min="0" max="25" type="number" #input [(ngModel)]="monster.hp">
-            </mat-form-field>
           </div>
           <!-- SPEED INPUT -->
           <div class="col-12 form-element">
@@ -91,6 +85,22 @@
               [property]="'setGameIconName'" [options]="gameIconsDropdown">
             </dropdown>
           </div>
+          <!-- DESCRIPTION TITLE INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field appearance="fill">
+              <mat-label>Role</mat-label>
+              <input matInput [(ngModel)]="monster.descriptionTitle">
+            </mat-form-field>
+          </div>
+          <!-- DESCRIPTION TEXT INPUT -->
+          <div class="col-12 form-element">
+            <mat-form-field class="textarea" appearance="fill">
+              <mat-label>Description</mat-label>
+              <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="10" [(ngModel)]="monster.description">
+              </textarea>
+            </mat-form-field>
+          </div>
           <!-- ACCORDIANS -->
           <div class="col-12 expansion-container form-element" *ngIf="gameIcons && gameIcons.length">
             <game-icon-accordian
@@ -112,8 +122,12 @@
         </div>
       </div>
       <div class="col-6">
-        <monster [monster]="monster">
+        <monster *ngIf="showMonster" [monster]="monster">
         </monster>
+        <div class="description-container">
+          <div class="title">{{monster.descriptionTitle}}</div>
+          <div class="description" [innerHTML]="getText(monster.description)"></div>
+        </div>
       </div>
     </div>
   </div>

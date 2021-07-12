@@ -11,9 +11,10 @@ export class Monster extends GUI {
     actions: Array<Action> = new Array();
     gameBackground: string;
     monsterSrc: string;
-    hp: number = 15;
     artist: string = '';
     setGameIconName: string = '';
+    descriptionTitle: string = '';
+    description: string = '';
 }
 export class Action {
     damage?: number = 1;

@@ -4,7 +4,8 @@
     min-height: 900px;
     .card-container{
         position: fixed !important;
-        margin: 30px;
+        margin: 30px 30px 30px 85px;
+        zoom: 140%;
     }
     .form-element{
         margin-bottom: 15px;
@@ -52,7 +53,18 @@
             background-color: #b460ff1a;
         }
     }
-    .card-container {
-        zoom: 140%;
+    .description-container {
+        position: fixed;
+        top: 56vh;
+        width: 570px;
+        .title {
+            font-weight: 700;
+        }
+        .description {
+            text-align: justify;
+            img {
+                max-height: 25px;
+            }
+        }
     }
 }

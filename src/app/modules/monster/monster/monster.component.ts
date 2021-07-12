@@ -11,6 +11,7 @@ import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 })
 export class MonsterComponent implements OnInit, DoCheck {
   @Input() monster!: Monster;
+  
 
   gameIcons: Array<GameIcon> = [];
   gameIconMap: Map<string, GameIcon> = new Map<string, GameIcon>();

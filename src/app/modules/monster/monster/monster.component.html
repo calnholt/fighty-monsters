@@ -10,21 +10,23 @@
         <div class="monster-image">
           <img *ngIf="monster.monsterSrc" src="{{monster.monsterSrc}}">
         </div>
-        <div class="stat-container">
-          <div class="stat">
-            <div>
-              {{monster.speed}}
-            </div>
-            <div>
-              <img src="{{getIconSrc('Speed')}}">
-            </div>
-          </div>
+        <div class="stat-container left">
           <div class="stat">
             <div>
               {{monster.defense}}
             </div>
             <div>
               <img src="{{getIconSrc('Defense')}}">
+            </div>
+          </div>
+        </div>
+        <div class="stat-container right">
+          <div class="stat">
+            <div>
+              {{monster.speed}}
+            </div>
+            <div>
+              <img src="{{getIconSrc('Speed')}}">
             </div>
           </div>
         </div>
